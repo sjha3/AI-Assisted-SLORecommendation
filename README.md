@@ -38,6 +38,65 @@ cd ..\SLO_Recommend
 uvicorn main:app --reload --port 8007
 ```
 
+## Multi-agent system (`agents/`)
+
+The project includes a multi-agent orchestration layer for natural language reliability queries.
+
+### Agent roles
+
+- `PlanningAgent`
+	- Decomposes user requests and delegates to team members.
+- `DataAgent`
+	- Fetches SLI/SLO/Incidents/Dependencies using service APIs.
+- `AnalysisAgent`
+	- Runs recommendation and impact analysis workflows.
+- `ResponseAgent`
+	- Produces final user-facing response and terminates the run.
+
+### Orchestration
+
+- Team configuration is defined in `agents/Orchestration.py`.
+- HTTP entrypoint is `agents/main.py`.
+- Request model: `agents/model/task_model.py` (`TaskRequest`, `TaskResponse`).
+
+### Run agents API
+
+```powershell
+cd .\agents
+uvicorn main:app --reload --port 8009
+```
+
+### Agent API endpoint
+
+- `POST /task/run`
+	- Request body:
+		- `task` (string, required)
+	- Response body:
+		- `task`
+		- `result`
+
+### Sample commands (`/task/run`)
+
+```powershell
+# PowerShell
+$body = @{ task = "get SLI of PricingService inventory/v1" } | ConvertTo-Json
+Invoke-RestMethod -Method POST -Uri "http://127.0.0.1:8009/task/run" -ContentType "application/json" -Body $body |
+	ConvertTo-Json -Depth 8
+```
+
+```bash
+# curl
+curl -X POST "http://127.0.0.1:8009/task/run" \
+  -H "Content-Type: application/json" \
+  -d '{"task":"get SLI of PricingService inventory/v1"}'
+```
+
+### Example tasks
+
+- `get SLI of PricingService inventory/v1`
+- `get SLO recommendation for CatalogService catalog/v1`
+- `run impact analysis for CheckoutService checkout/v1 with tighter latency`
+
 ## Data storage
 
 The project uses file-based storage under `DB/`.
