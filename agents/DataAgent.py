@@ -272,15 +272,7 @@ data_agent = AssistantAgent(
         
     ),
 )
-response_agent = AssistantAgent(
-    name="ResponseAgent",
-    model_client=model_client,
-    system_message="""
-    You are a helpful agent which summarizes the response from ReviewAgent.
-    You should be able to summarize the response from ReviewAgent and provide a concise answer.
-    If you're satisfied with the final draft, respond with 'FINAL'.
-    """
-)
+
 
 
 async def main():
