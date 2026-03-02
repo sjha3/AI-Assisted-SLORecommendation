@@ -33,15 +33,24 @@
     .table th, .table td { border: 1px solid #e5e7eb; padding: 6px 8px; font-size: 13px; text-align: left; }
     .table th { background: #f8fafc; }
     pre { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px; overflow: auto; }
+    .nav-links { display: flex; flex-direction: column; gap: 8px; }
+    .assistant-chat-btn { margin-top: auto; }
+    .assistant-dialog { width: min(720px, 92vw); border: 1px solid #e5e7eb; border-radius: 8px; padding: 0; }
+    .assistant-dialog::backdrop { background: rgba(15, 23, 42, 0.35); }
+    .assistant-dialog-body { padding: 14px; }
+    .assistant-query-input { width: 100%; box-sizing: border-box; }
   </style>
 </head>
 <body>
   <div class="app-layout">
     <aside class="side-panel card">
       <h2>Navigation</h2>
-      <button class="tab-btn active" data-tab="graphTab">Graph</button>
-      <button class="tab-btn" data-tab="recommendTab">GetSLORecommendation</button>
-      <button class="tab-btn" data-tab="impactTab">ImpactAnalysis</button>
+      <div class="nav-links">
+        <button class="tab-btn active" data-tab="graphTab">Graph</button>
+        <button class="tab-btn" data-tab="recommendTab">GetSLORecommendation</button>
+        <button class="tab-btn" data-tab="impactTab">ImpactAnalysis</button>
+      </div>
+      <button id="assistantChatBtn" class="assistant-chat-btn">Assistant Chat</button>
     </aside>
 
     <main class="content-panel">
@@ -123,6 +132,23 @@
     </main>
   </div>
 
+  <dialog id="assistantDialog" class="assistant-dialog">
+    <div class="assistant-dialog-body">
+      <h3>Assistant Chat</h3>
+      <div class="row">
+        <label for="assistantQueryInput">Query:</label>
+        <input id="assistantQueryInput" class="assistant-query-input" value="get SLI of PricingService inventory/v1" />
+      </div>
+      <div id="assistantDialogStatus" class="meta">Enter a query and click Send.</div>
+      <div id="assistantDialogError" class="error"></div>
+      <pre id="assistantDialogResult">No response yet.</pre>
+      <div class="row" style="justify-content:flex-end; margin-bottom:0;">
+        <button id="assistantCloseBtn" type="button">Close</button>
+        <button id="assistantSendBtn" type="button">Send</button>
+      </div>
+    </div>
+  </dialog>
+
   <script>
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabViews = document.querySelectorAll('.tab-view');
@@ -144,6 +170,15 @@
   </script>
 
   <script>
+    const assistantChatBtn = document.getElementById('assistantChatBtn');
+    const assistantApiBase = 'http://127.0.0.1:8009';
+    const assistantDialog = document.getElementById('assistantDialog');
+    const assistantQueryInput = document.getElementById('assistantQueryInput');
+    const assistantDialogStatus = document.getElementById('assistantDialogStatus');
+    const assistantDialogError = document.getElementById('assistantDialogError');
+    const assistantDialogResult = document.getElementById('assistantDialogResult');
+    const assistantCloseBtn = document.getElementById('assistantCloseBtn');
+    const assistantSendBtn = document.getElementById('assistantSendBtn');
     const loadBtn = document.getElementById('loadBtn');
     const apiBaseInput = document.getElementById('apiBase');
     const sliApiBaseInput = document.getElementById('sliApiBase');
@@ -172,6 +207,60 @@
     const impactError = document.getElementById('impactError');
     const impactResult = document.getElementById('impactResult');
     let latestRecommendationData = null;
+
+    function openAssistantDialog() {
+      assistantDialogError.textContent = '';
+      assistantDialogStatus.textContent = 'Enter a query and click Send.';
+      if (typeof assistantDialog.showModal === 'function') {
+        assistantDialog.showModal();
+      } else {
+        assistantDialog.setAttribute('open', 'open');
+      }
+      assistantQueryInput.focus();
+      assistantQueryInput.select();
+    }
+
+    async function runAssistantTask() {
+      const task = assistantQueryInput.value.trim();
+      if (!task) {
+        assistantDialogError.textContent = 'Please provide a query.';
+        return;
+      }
+
+      assistantDialogError.textContent = '';
+      assistantDialogStatus.textContent = 'Running assistant...';
+      const originalLabel = assistantSendBtn.textContent;
+      assistantSendBtn.disabled = true;
+      assistantSendBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(`${assistantApiBase}/task/run`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ task }),
+        });
+
+        if (!response.ok) {
+          let message = `HTTP ${response.status}`;
+          try {
+            const data = await response.json();
+            if (data?.detail) message = data.detail;
+          } catch {
+          }
+          throw new Error(message);
+        }
+
+        const data = await response.json();
+        assistantDialogResult.textContent = String(data?.result ?? 'No result returned.');
+        assistantDialogStatus.textContent = 'Assistant run completed.';
+      } catch (err) {
+        assistantDialogStatus.textContent = 'Assistant run failed.';
+        assistantDialogError.textContent = `Error: ${err.message}`;
+      } finally {
+        assistantSendBtn.disabled = false;
+        assistantSendBtn.textContent = originalLabel;
+      }
+    }
 
     function clearGraph() {
       while (graphSvg.firstChild) {
@@ -938,6 +1027,9 @@
     recommendBtn.addEventListener('click', loadRecommendation);
     acceptRecommendBtn.addEventListener('click', acceptRecommendedSlo);
     analyzeBtn.addEventListener('click', analyzeImpact);
+    assistantChatBtn.addEventListener('click', openAssistantDialog);
+    assistantSendBtn.addEventListener('click', runAssistantTask);
+    assistantCloseBtn.addEventListener('click', () => assistantDialog.close());
   </script>
 </body>
 </html>
