@@ -1,0 +1,15 @@
+{
+  "ServiceId": "PaymentService",
+  "API": "payment/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "PaymentGateway",
+      "API": "payment/v1"
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1"
+    }
+  ],
+  "Id": "4ffa76aa-2b6c-4085-9992-73caa0aaf771"
+}

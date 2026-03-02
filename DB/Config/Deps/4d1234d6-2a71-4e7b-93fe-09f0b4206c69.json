@@ -1,0 +1,11 @@
+{
+  "ServiceId": "PricingService",
+  "API": "inventory/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "CatalogService",
+      "API": "catalog/v1"
+    }
+  ],
+  "Id": "4d1234d6-2a71-4e7b-93fe-09f0b4206c69"
+}

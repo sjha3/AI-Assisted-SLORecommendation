@@ -1,0 +1,11 @@
+{
+  "ServiceId": "OrderService",
+  "API": [
+    "orders/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Orders",
+  "Contact": "orders@shop.local",
+  "Id": "45df656a-fc99-48b9-ad8f-8bc4fcd87fd5"
+}

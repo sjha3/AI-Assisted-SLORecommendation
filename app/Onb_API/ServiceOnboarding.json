@@ -1,0 +1,109 @@
+{
+  "services":[
+        {
+            "ServiceId": "CatalogService",
+            "API": ["catalog/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Catalog",
+            "Contact": "catalog@shop.local"
+        },
+        {
+            "ServiceId": "PricingService",
+            "API": ["pricing/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Pricing",
+            "Contact": "pricing@shop.local"
+        },
+        {
+            "ServiceId": "PricingService",
+            "API": ["inventory/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Inventory",
+            "Contact": "inventory@shop.local"
+        },
+        {
+            "ServiceId": "PricingService",
+            "API": ["cart/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Checkout",
+            "Contact": "checkout@shop.local"
+        },
+        {
+            "ServiceId": "CheckoutService",
+            "API": ["checkout/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Checkout",
+            "Contact": "checkout@shop.local"
+        },
+        {
+            "ServiceId": "PaymentGateway",
+            "API": ["payment/v1"],
+            "Type": "WebApp",
+            "Category": "External",
+            "Team": "Payments",
+            "Contact": "payments@shop.local"
+        },
+
+        {
+            "ServiceId": "PaymentService",
+            "API": ["payment/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Payments",
+            "Contact": "payments@shop.local"
+        },
+        {
+            "ServiceId": "OrderService",
+            "API": ["orders/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Orders",
+            "Contact": "orders@shop.local"
+        },
+        {
+            "ServiceId": "ShippingService",
+            "API": ["shipping/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Logistics",
+            "Contact": "logistics@shop.local"
+        },
+        {
+            "ServiceId": "NotificationService",
+            "API": ["notification/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "Notifications",
+            "Contact": "notify@shop.local"
+        },
+        {
+            "ServiceId": "CustomerProfileService",
+            "API": ["customer-profile/v1"],
+            "Type": "WebApp",
+            "Category": "Internal",
+            "Team": "CRM",
+            "Contact": "crm@shop.local"
+        },
+        {
+            "ServiceId": "DocumentDBService",
+            "API": ["documentdb/v1/read", "documentdb/v1/write"],
+            "Type": "DocumentDB",
+            "Category": "Internal",
+            "Team": "Data",
+            "Contact": "data@shop.local"
+        },
+        {
+            "ServiceId": "ECommerceGatewayService",
+            "API": ["catalog/v1", "pricing/v1", "inventory/v1", "cart/v1", "checkout/v1", "payment/v1", "orders/v1", "shipping/v1", "notification/v1", "customer-profile/v1"],
+            "Type": "GW",
+            "Category": "Internal",
+            "Team": "Platform",
+            "Contact": "platform@shop.local"
+        }
+    ]
+}

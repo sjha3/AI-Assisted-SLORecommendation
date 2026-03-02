@@ -1,0 +1,27 @@
+{
+  "ServiceId": "OrderService",
+  "API": "orders/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write"
+    }
+  ],
+  "Id": "58e49126-85a8-4d90-bd25-d05963fceb11"
+}

@@ -1,0 +1,23 @@
+{
+  "ServiceId": "CheckoutService",
+  "API": "checkout/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "PricingService",
+      "API": "cart/v1"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "pricing/v1"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1"
+    },
+    {
+      "ServiceId": "CustomerProfileService",
+      "API": "customer-profile/v1"
+    }
+  ],
+  "Id": "84f51bd4-b961-4853-82ab-b1c9174144c9"
+}

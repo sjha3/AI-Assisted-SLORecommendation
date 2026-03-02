@@ -1,0 +1,112 @@
+{
+  "incidents": [
+    {
+      "ServiceId": "CatalogService",
+      "API": "catalog/v1",
+      "Id": "INC-20260301-001",
+      "Type": "Availability",
+      "Severity": "High",
+      "Description": "Catalog API experienced intermittent 503 responses during peak traffic.",
+      "Timestamp": "2026-03-01T09:10:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "pricing/v1",
+      "Id": "INC-20260301-002",
+      "Type": "Latency",
+      "Severity": "Medium",
+      "Description": "Pricing API p95 latency crossed threshold due to cache miss surge.",
+      "Timestamp": "2026-03-01T09:20:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1",
+      "Id": "INC-20260301-003",
+      "Type": "ErrorRate",
+      "Severity": "High",
+      "Description": "Inventory API error rate increased after backend timeout spike.",
+      "Timestamp": "2026-03-01T09:32:00Z"
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1",
+      "Id": "INC-20260301-004",
+      "Type": "Availability",
+      "Severity": "Critical",
+      "Description": "Checkout API unavailable for 4 minutes due to upstream dependency outage.",
+      "Timestamp": "2026-03-01T09:41:00Z"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1",
+      "Id": "INC-20260301-005",
+      "Type": "Latency",
+      "Severity": "High",
+      "Description": "Payment API observed elevated round-trip times with external gateway.",
+      "Timestamp": "2026-03-01T09:55:00Z"
+    },
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1",
+      "Id": "INC-20260301-006",
+      "Type": "ErrorRate",
+      "Severity": "Medium",
+      "Description": "Order creation failures increased after recent deployment rollback.",
+      "Timestamp": "2026-03-01T10:03:00Z"
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1",
+      "Id": "INC-20260301-007",
+      "Type": "Latency",
+      "Severity": "Low",
+      "Description": "Shipping API latency increased due to downstream carrier API slowness.",
+      "Timestamp": "2026-03-01T10:12:00Z"
+    },
+    {
+      "ServiceId": "NotificationService",
+      "API": "notification/v1",
+      "Id": "INC-20260301-008",
+      "Type": "Availability",
+      "Severity": "Medium",
+      "Description": "Notification API had intermittent connection resets while sending events.",
+      "Timestamp": "2026-03-01T10:25:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read",
+      "Id": "INC-20260301-009",
+      "Type": "Latency",
+      "Severity": "High",
+      "Description": "DocumentDB read API p95 latency exceeded threshold during reindex activity.",
+      "Timestamp": "2026-03-01T10:37:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write",
+      "Id": "INC-20260301-010",
+      "Type": "ErrorRate",
+      "Severity": "Critical",
+      "Description": "DocumentDB write API reported increased conflict and timeout errors.",
+      "Timestamp": "2026-03-01T10:44:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "checkout/v1",
+      "Id": "INC-20260301-011",
+      "Type": "Availability",
+      "Severity": "High",
+      "Description": "Gateway route for checkout degraded due to policy execution timeout.",
+      "Timestamp": "2026-03-01T10:51:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "payment/v1",
+      "Id": "INC-20260301-012",
+      "Type": "Latency",
+      "Severity": "High",
+      "Description": "Gateway payment route latency increased due to retry amplification.",
+      "Timestamp": "2026-03-01T10:58:00Z"
+    }
+  ]
+}

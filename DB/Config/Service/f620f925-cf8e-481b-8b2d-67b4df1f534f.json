@@ -1,0 +1,11 @@
+{
+  "ServiceId": "PaymentService",
+  "API": [
+    "payment/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Payments",
+  "Contact": "payments@shop.local",
+  "Id": "f620f925-cf8e-481b-8b2d-67b4df1f534f"
+}

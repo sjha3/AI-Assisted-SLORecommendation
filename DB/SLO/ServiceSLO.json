@@ -1,0 +1,694 @@
+{
+  "slos": [
+    {
+      "ServiceId": "CatalogService",
+      "API": "catalog/v1",
+      "Type": "Availability",
+      "Description": "SLO for CatalogService catalog/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "CatalogService",
+      "API": "catalog/v1",
+      "Type": "Latency",
+      "Description": "SLO for CatalogService catalog/v1 Latency",
+      "Target": 145.2,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "CatalogService",
+      "API": "catalog/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for CatalogService catalog/v1 ErrorRate",
+      "Target": 1.441,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1",
+      "Type": "Availability",
+      "Description": "Recommended Availability SLO for checkout/v1 (computed)",
+      "Target": 99.5,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-02T00:41:16Z"
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1",
+      "Type": "Latency",
+      "Description": "Recommended Latency SLO for checkout/v1 (computed)",
+      "Target": 200,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-02T00:41:16Z"
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1",
+      "Type": "ErrorRate",
+      "Description": "Recommended ErrorRate SLO for checkout/v1 (computed)",
+      "Target": 0.05,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-02T00:41:16Z"
+    },
+    {
+      "ServiceId": "CustomerProfileService",
+      "API": "customer-profile/v1",
+      "Type": "Availability",
+      "Description": "SLO for CustomerProfileService customer-profile/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "CustomerProfileService",
+      "API": "customer-profile/v1",
+      "Type": "Latency",
+      "Description": "SLO for CustomerProfileService customer-profile/v1 Latency",
+      "Target": 147.4,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "CustomerProfileService",
+      "API": "customer-profile/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for CustomerProfileService customer-profile/v1 ErrorRate",
+      "Target": 1.672,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "cart/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService cart/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "cart/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService cart/v1 Latency",
+      "Target": 138.6,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "cart/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService cart/v1 ErrorRate",
+      "Target": 1.419,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "catalog/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService catalog/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "catalog/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService catalog/v1 Latency",
+      "Target": 137.5,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "catalog/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService catalog/v1 ErrorRate",
+      "Target": 1.474,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "checkout/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService checkout/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "checkout/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService checkout/v1 Latency",
+      "Target": 141.9,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "checkout/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService checkout/v1 ErrorRate",
+      "Target": 1.727,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "customer-profile/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService customer-profile/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "customer-profile/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService customer-profile/v1 Latency",
+      "Target": 134.2,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "customer-profile/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService customer-profile/v1 ErrorRate",
+      "Target": 2.013,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "inventory/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService inventory/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "inventory/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService inventory/v1 Latency",
+      "Target": 140.8,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "inventory/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService inventory/v1 ErrorRate",
+      "Target": 1.199,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "notification/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService notification/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "notification/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService notification/v1 Latency",
+      "Target": 132.0,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "notification/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService notification/v1 ErrorRate",
+      "Target": 2.09,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "orders/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService orders/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "orders/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService orders/v1 Latency",
+      "Target": 147.4,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "orders/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService orders/v1 ErrorRate",
+      "Target": 1.738,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "payment/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService payment/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "payment/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService payment/v1 Latency",
+      "Target": 138.6,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "payment/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService payment/v1 ErrorRate",
+      "Target": 1.859,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "pricing/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService pricing/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "pricing/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService pricing/v1 Latency",
+      "Target": 137.5,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "pricing/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService pricing/v1 ErrorRate",
+      "Target": 1.661,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "shipping/v1",
+      "Type": "Availability",
+      "Description": "SLO for ECommerceGatewayService shipping/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "shipping/v1",
+      "Type": "Latency",
+      "Description": "SLO for ECommerceGatewayService shipping/v1 Latency",
+      "Target": 136.4,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "shipping/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ECommerceGatewayService shipping/v1 ErrorRate",
+      "Target": 1.859,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "NotificationService",
+      "API": "notification/v1",
+      "Type": "Availability",
+      "Description": "SLO for NotificationService notification/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "NotificationService",
+      "API": "notification/v1",
+      "Type": "Latency",
+      "Description": "SLO for NotificationService notification/v1 Latency",
+      "Target": 134.2,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "NotificationService",
+      "API": "notification/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for NotificationService notification/v1 ErrorRate",
+      "Target": 1.573,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1",
+      "Type": "Availability",
+      "Description": "SLO for OrderService orders/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1",
+      "Type": "Latency",
+      "Description": "SLO for OrderService orders/v1 Latency",
+      "Target": 132.0,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for OrderService orders/v1 ErrorRate",
+      "Target": 1.804,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PaymentGateway",
+      "API": "payment/v1",
+      "Type": "Availability",
+      "Description": "SLO for PaymentGateway payment/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PaymentGateway",
+      "API": "payment/v1",
+      "Type": "Latency",
+      "Description": "SLO for PaymentGateway payment/v1 Latency",
+      "Target": 148.5,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PaymentGateway",
+      "API": "payment/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for PaymentGateway payment/v1 ErrorRate",
+      "Target": 1.122,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1",
+      "Type": "Availability",
+      "Description": "Recommended Availability SLO for payment/v1 (computed)",
+      "Target": 99.5,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-02T00:41:16Z"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1",
+      "Type": "Latency",
+      "Description": "Recommended Latency SLO for payment/v1 (computed)",
+      "Target": 200,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-02T00:41:16Z"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1",
+      "Type": "ErrorRate",
+      "Description": "Recommended ErrorRate SLO for payment/v1 (computed)",
+      "Target": 0.05,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-02T00:41:16Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "cart/v1",
+      "Type": "Availability",
+      "Description": "SLO for PricingService cart/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "cart/v1",
+      "Type": "Latency",
+      "Description": "SLO for PricingService cart/v1 Latency",
+      "Target": 146.3,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "cart/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for PricingService cart/v1 ErrorRate",
+      "Target": 1.573,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1",
+      "Type": "Availability",
+      "Description": "SLO for PricingService inventory/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1",
+      "Type": "Latency",
+      "Description": "SLO for PricingService inventory/v1 Latency",
+      "Target": 148.5,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for PricingService inventory/v1 ErrorRate",
+      "Target": 1.353,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "pricing/v1",
+      "Type": "Availability",
+      "Description": "SLO for PricingService pricing/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "pricing/v1",
+      "Type": "Latency",
+      "Description": "SLO for PricingService pricing/v1 Latency",
+      "Target": 145.2,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "pricing/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for PricingService pricing/v1 ErrorRate",
+      "Target": 1.815,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read",
+      "Type": "Availability",
+      "Description": "SLO for DocumentDBService documentdb/v1/read Availability",
+      "Target": 99.95,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read",
+      "Type": "Latency",
+      "Description": "SLO for DocumentDBService documentdb/v1/read Latency",
+      "Target": 40,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read",
+      "Type": "ErrorRate",
+      "Description": "SLO for DocumentDBService documentdb/v1/read ErrorRate",
+      "Target": 0.4,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write",
+      "Type": "Availability",
+      "Description": "SLO for DocumentDBService documentdb/v1/write Availability",
+      "Target": 99.94,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write",
+      "Type": "Latency",
+      "Description": "SLO for DocumentDBService documentdb/v1/write Latency",
+      "Target": 48,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write",
+      "Type": "ErrorRate",
+      "Description": "SLO for DocumentDBService documentdb/v1/write ErrorRate",
+      "Target": 0.45,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1",
+      "Type": "Availability",
+      "Description": "SLO for ShippingService shipping/v1 Availability",
+      "Target": 99.8,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1",
+      "Type": "Latency",
+      "Description": "SLO for ShippingService shipping/v1 Latency",
+      "Target": 143.0,
+      "Unit": "ms",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1",
+      "Type": "ErrorRate",
+      "Description": "SLO for ShippingService shipping/v1 ErrorRate",
+      "Target": 1.111,
+      "Unit": "percent",
+      "Window": "28",
+      "Timestamp": "2026-03-01T00:00:00Z"
+    }
+  ]
+}

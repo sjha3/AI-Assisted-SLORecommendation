@@ -1,0 +1,11 @@
+{
+  "ServiceId": "CheckoutService",
+  "API": [
+    "checkout/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Checkout",
+  "Contact": "checkout@shop.local",
+  "Id": "9af96621-a3ee-4682-9cd2-ace4876fdeba"
+}

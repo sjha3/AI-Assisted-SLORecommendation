@@ -1,0 +1,52 @@
+{
+  "ServiceId": "PricingService",
+  "API": "inventory/v1",
+  "entries": [
+    {
+      "SavedAt": "2026-03-02T18:42:47Z",
+      "SLOs": [
+        {
+          "Type": "Availability",
+          "Target": 99.7901,
+          "Unit": "percent",
+          "Window": "28"
+        },
+        {
+          "Type": "Latency",
+          "Target": 225.0,
+          "Unit": "p95",
+          "Window": "28"
+        },
+        {
+          "Type": "ErrorRate",
+          "Target": 2.1471,
+          "Unit": "percent",
+          "Window": "28"
+        }
+      ]
+    },
+    {
+      "SavedAt": "2026-03-02T18:43:23Z",
+      "SLOs": [
+        {
+          "Type": "Availability",
+          "Target": 99.7901,
+          "Unit": "percent",
+          "Window": "28"
+        },
+        {
+          "Type": "Latency",
+          "Target": 225.0,
+          "Unit": "p95",
+          "Window": "28"
+        },
+        {
+          "Type": "ErrorRate",
+          "Target": 2.1471,
+          "Unit": "percent",
+          "Window": "28"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "ServiceId": "PricingService",
+  "API": "inventory/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "CatalogService",
+      "API": "catalog/v1"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write"
+    }
+  ],
+  "Id": "c7d5a555-b299-4a42-8a00-c8422905340c"
+}

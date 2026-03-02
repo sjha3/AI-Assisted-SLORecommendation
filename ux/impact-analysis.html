@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact Analysis</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background: #f6f7fb; color: #1f2937; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; margin-bottom: 16px; }
+    .row { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+    input { padding: 8px 10px; width: 260px; border: 1px solid #cbd5e1; border-radius: 6px; }
+    button { padding: 8px 14px; border: none; border-radius: 6px; background: #2563eb; color: white; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+    .meta { margin-bottom: 10px; font-size: 14px; color: #4b5563; }
+    .error { color: #b91c1c; margin-top: 8px; }
+    .table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .table th, .table td { border: 1px solid #e5e7eb; padding: 6px 8px; font-size: 13px; text-align: left; }
+    .table th { background: #f8fafc; }
+    .muted { color: #64748b; }
+    a { color: #2563eb; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>Impact Analysis</h1>
+  <div class="meta"><a href="./index copy.html">← Back to main UX</a></div>
+
+  <div class="card">
+    <h3>Run Analysis</h3>
+    <div class="row">
+      <label for="impactApiBase">SLO_Recommend API Base:</label>
+      <input id="impactApiBase" value="http://127.0.0.1:8008" />
+      <label for="impactServiceId">Service ID:</label>
+      <input id="impactServiceId" value="PricingService" />
+      <label for="impactApi">API:</label>
+      <input id="impactApi" value="inventory/v1" />
+    </div>
+
+    <h3 style="margin-top:10px;">New SLO Inputs</h3>
+    <div class="row">
+      <label for="newAvailability">Availability Target:</label>
+      <input id="newAvailability" type="number" step="0.0001" value="99.9" />
+      <label for="newLatency">Latency Target:</label>
+      <input id="newLatency" type="number" step="0.0001" value="150" />
+      <label for="newErrorRate">ErrorRate Target:</label>
+      <input id="newErrorRate" type="number" step="0.0001" value="1.2" />
+      <button id="analyzeBtn">Analyze Impact</button>
+    </div>
+
+    <div id="impactStatus" class="meta">Provide inputs and click "Analyze Impact".</div>
+    <div id="impactError" class="error"></div>
+  </div>
+
+  <div id="impactResult"></div>
+
+  <script>
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const impactApiBaseInput = document.getElementById('impactApiBase');
+    const impactServiceIdInput = document.getElementById('impactServiceId');
+    const impactApiInput = document.getElementById('impactApi');
+    const newAvailabilityInput = document.getElementById('newAvailability');
+    const newLatencyInput = document.getElementById('newLatency');
+    const newErrorRateInput = document.getElementById('newErrorRate');
+    const impactStatus = document.getElementById('impactStatus');
+    const impactError = document.getElementById('impactError');
+    const impactResult = document.getElementById('impactResult');
+
+    function buildPayload() {
+      return {
+        ServiceId: impactServiceIdInput.value.trim(),
+        API: impactApiInput.value.trim(),
+        NewSLO: [
+          { Type: 'Availability', Target: Number(newAvailabilityInput.value), Unit: 'percent' },
+          { Type: 'Latency', Target: Number(newLatencyInput.value), Unit: 'p95' },
+          { Type: 'ErrorRate', Target: Number(newErrorRateInput.value), Unit: 'percent' },
+        ],
+      };
+    }
+
+    function createTable(headers, rows) {
+      const table = document.createElement('table');
+      table.className = 'table';
+
+      const thead = document.createElement('thead');
+      const tr = document.createElement('tr');
+      headers.forEach((h) => {
+        const th = document.createElement('th');
+        th.textContent = h;
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      rows.forEach((cols) => {
+        const row = document.createElement('tr');
+        cols.forEach((c) => {
+          const td = document.createElement('td');
+          td.textContent = c;
+          row.appendChild(td);
+        });
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+
+      return table;
+    }
+
+    function renderImpact(data) {
+      impactResult.innerHTML = '';
+
+      const chainCard = document.createElement('div');
+      chainCard.className = 'card';
+      const chainTitle = document.createElement('h3');
+      chainTitle.textContent = 'Upstream Chain';
+      chainCard.appendChild(chainTitle);
+
+      const chain = Array.isArray(data?.UpstreamChain) ? data.UpstreamChain : [];
+      if (chain.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'meta';
+        empty.textContent = 'No upstream nodes impacted.';
+        chainCard.appendChild(empty);
+      } else {
+        const rows = chain.map((item, idx) => [String(idx + 1), String(item)]);
+        chainCard.appendChild(createTable(['#', 'Node'], rows));
+      }
+      impactResult.appendChild(chainCard);
+
+      const affectedCard = document.createElement('div');
+      affectedCard.className = 'card';
+      const affectedTitle = document.createElement('h3');
+      affectedTitle.textContent = 'Affected Nodes';
+      affectedCard.appendChild(affectedTitle);
+
+      const affected = Array.isArray(data?.AffectedNodes) ? data.AffectedNodes : [];
+      if (affected.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'meta';
+        empty.textContent = 'No affected node details returned.';
+        affectedCard.appendChild(empty);
+      } else {
+        const rows = affected.map((node) => {
+          const curr = node.CurrentSLO || {};
+          const upd = node.UpdatedSLO || {};
+          const sli = node.CurrentSLI || {};
+          return [
+            `${node.ServiceId}/${node.API}`,
+            `${curr.Availability ?? '-'} | ${curr.Latency ?? '-'} | ${curr.ErrorRate ?? '-'}`,
+            `${upd.Availability ?? '-'} | ${upd.Latency ?? '-'} | ${upd.ErrorRate ?? '-'}`,
+            `${sli.Availability ?? '-'} | ${sli.Latency ?? '-'} | ${sli.ErrorRate ?? '-'}`,
+            String(node.IncidentCount ?? 0),
+          ];
+        });
+
+        affectedCard.appendChild(
+          createTable(
+            ['Node', 'Current SLO (A|L|E)', 'Updated SLO (A|L|E)', 'Current SLI (A|L|E)', 'Incidents'],
+            rows,
+          ),
+        );
+      }
+      impactResult.appendChild(affectedCard);
+
+      const llmCard = document.createElement('div');
+      llmCard.className = 'card';
+      const llmTitle = document.createElement('h3');
+      llmTitle.textContent = 'LLM Analysis';
+      llmCard.appendChild(llmTitle);
+
+      const llm = data?.LLMImpact || {};
+      const summary = document.createElement('div');
+      summary.className = 'meta';
+      summary.textContent = `Summary: ${llm.Summary || '-'}`;
+      llmCard.appendChild(summary);
+
+      const explanation = document.createElement('div');
+      explanation.className = 'meta';
+      explanation.textContent = `Explanation: ${llm.Explanation || '-'}`;
+      llmCard.appendChild(explanation);
+
+      const bottleneck = document.createElement('div');
+      bottleneck.className = 'meta';
+      bottleneck.textContent = `Bottleneck: ${llm.Bottleneck || '-'}`;
+      llmCard.appendChild(bottleneck);
+
+      const risks = Array.isArray(llm.Risks) ? llm.Risks : [];
+      if (risks.length > 0) {
+        const riskRows = risks.map((r, idx) => [String(idx + 1), String(r)]);
+        llmCard.appendChild(createTable(['#', 'Risk'], riskRows));
+      } else {
+        const none = document.createElement('div');
+        none.className = 'meta muted';
+        none.textContent = 'No risks returned.';
+        llmCard.appendChild(none);
+      }
+
+      impactResult.appendChild(llmCard);
+    }
+
+    async function analyzeImpact() {
+      impactError.textContent = '';
+      impactResult.innerHTML = '';
+
+      const base = impactApiBaseInput.value.trim().replace(/\/$/, '');
+      const payload = buildPayload();
+
+      if (!base || !payload.ServiceId || !payload.API) {
+        impactError.textContent = 'Please provide API base, service ID, and API.';
+        return;
+      }
+
+      impactStatus.textContent = 'Running impact analysis...';
+
+      try {
+        const response = await fetch(`${base}/slos/impact-analysis`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          let message = `HTTP ${response.status}`;
+          try {
+            const data = await response.json();
+            if (data?.detail) message = data.detail;
+          } catch {
+          }
+          throw new Error(message);
+        }
+
+        const data = await response.json();
+        renderImpact(data);
+        impactStatus.textContent = 'Impact analysis completed.';
+      } catch (err) {
+        impactStatus.textContent = 'Impact analysis failed.';
+        impactError.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    analyzeBtn.addEventListener('click', analyzeImpact);
+  </script>
+</body>
+</html>

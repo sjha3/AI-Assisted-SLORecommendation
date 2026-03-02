@@ -1,0 +1,20 @@
+{
+  "ServiceId": "ECommerceGatewayService",
+  "API": [
+    "catalog/v1",
+    "pricing/v1",
+    "inventory/v1",
+    "cart/v1",
+    "checkout/v1",
+    "payment/v1",
+    "orders/v1",
+    "shipping/v1",
+    "notification/v1",
+    "customer-profile/v1"
+  ],
+  "Type": "GW",
+  "Category": "Internal",
+  "Team": "Platform",
+  "Contact": "platform@shop.local",
+  "Id": "20d27e97-a1e8-4686-baa7-8b1683b0be0d"
+}

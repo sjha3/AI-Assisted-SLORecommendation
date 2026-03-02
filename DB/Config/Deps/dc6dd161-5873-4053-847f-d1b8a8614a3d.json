@@ -1,0 +1,19 @@
+{
+  "ServiceId": "OrderService",
+  "API": "orders/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1"
+    }
+  ],
+  "Id": "dc6dd161-5873-4053-847f-d1b8a8614a3d"
+}

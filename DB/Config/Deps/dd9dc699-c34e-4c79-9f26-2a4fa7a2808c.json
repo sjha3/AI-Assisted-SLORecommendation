@@ -1,0 +1,23 @@
+{
+  "ServiceId": "PaymentService",
+  "API": "payment/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "PaymentGateway",
+      "API": "payment/v1"
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write"
+    }
+  ],
+  "Id": "dd9dc699-c34e-4c79-9f26-2a4fa7a2808c"
+}

@@ -1,0 +1,234 @@
+{
+  "dependencies": [
+    {
+      "ServiceId": "PricingService",
+      "API": "pricing/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "CatalogService",
+          "API": "catalog/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "CatalogService",
+          "API": "catalog/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "cart/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "CatalogService",
+          "API": "catalog/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "pricing/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "inventory/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "PricingService",
+          "API": "cart/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "pricing/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "inventory/v1"
+        },
+        {
+          "ServiceId": "CustomerProfileService",
+          "API": "customer-profile/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "PaymentGateway",
+          "API": "payment/v1"
+        },
+        {
+          "ServiceId": "CheckoutService",
+          "API": "checkout/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "CheckoutService",
+          "API": "checkout/v1"
+        },
+        {
+          "ServiceId": "PaymentService",
+          "API": "payment/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "inventory/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "OrderService",
+          "API": "orders/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "NotificationService",
+      "API": "notification/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "OrderService",
+          "API": "orders/v1"
+        },
+        {
+          "ServiceId": "ShippingService",
+          "API": "shipping/v1"
+        },
+        {
+          "ServiceId": "PaymentService",
+          "API": "payment/v1"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/read"
+        },
+        {
+          "ServiceId": "DocumentDBService",
+          "API": "documentdb/v1/write"
+        }
+      ]
+    },
+    {
+      "ServiceId": "ECommerceGatewayService",
+      "API": "catalog/v1",
+      "DependsOn": [
+        {
+          "ServiceId": "CatalogService",
+          "API": "catalog/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "pricing/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "inventory/v1"
+        },
+        {
+          "ServiceId": "PricingService",
+          "API": "cart/v1"
+        },
+        {
+          "ServiceId": "CheckoutService",
+          "API": "checkout/v1"
+        },
+        {
+          "ServiceId": "PaymentService",
+          "API": "payment/v1"
+        },
+        {
+          "ServiceId": "OrderService",
+          "API": "orders/v1"
+        },
+        {
+          "ServiceId": "ShippingService",
+          "API": "shipping/v1"
+        },
+        {
+          "ServiceId": "NotificationService",
+          "API": "notification/v1"
+        },
+        {
+          "ServiceId": "CustomerProfileService",
+          "API": "customer-profile/v1"
+        }
+      ]
+    }
+  ]
+}

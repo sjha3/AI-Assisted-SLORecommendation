@@ -1,0 +1,11 @@
+{
+  "ServiceId": "ShippingService",
+  "API": [
+    "shipping/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Logistics",
+  "Contact": "logistics@shop.local",
+  "Id": "507e5662-7382-4d0f-ab74-c05440e3d1e8"
+}

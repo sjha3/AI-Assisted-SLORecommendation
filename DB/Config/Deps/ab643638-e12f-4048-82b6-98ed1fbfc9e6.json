@@ -1,0 +1,19 @@
+{
+  "ServiceId": "NotificationService",
+  "API": "notification/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1"
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1"
+    }
+  ],
+  "Id": "ab643638-e12f-4048-82b6-98ed1fbfc9e6"
+}

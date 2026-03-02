@@ -1,0 +1,47 @@
+{
+  "ServiceId": "ECommerceGatewayService",
+  "API": "catalog/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "CatalogService",
+      "API": "catalog/v1"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "pricing/v1"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "inventory/v1"
+    },
+    {
+      "ServiceId": "PricingService",
+      "API": "cart/v1"
+    },
+    {
+      "ServiceId": "CheckoutService",
+      "API": "checkout/v1"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1"
+    },
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1"
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1"
+    },
+    {
+      "ServiceId": "NotificationService",
+      "API": "notification/v1"
+    },
+    {
+      "ServiceId": "CustomerProfileService",
+      "API": "customer-profile/v1"
+    }
+  ],
+  "Id": "e7531d2c-591e-49cd-9077-df4bc23f339c"
+}

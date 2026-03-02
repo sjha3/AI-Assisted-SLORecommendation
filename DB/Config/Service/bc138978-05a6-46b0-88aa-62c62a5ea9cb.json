@@ -1,0 +1,11 @@
+{
+  "ServiceId": "PaymentGateway",
+  "API": [
+    "payment/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "External",
+  "Team": "Payments",
+  "Contact": "payments@shop.local",
+  "Id": "bc138978-05a6-46b0-88aa-62c62a5ea9cb"
+}

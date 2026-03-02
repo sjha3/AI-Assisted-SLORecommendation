@@ -1,0 +1,11 @@
+{
+  "ServiceId": "PricingService",
+  "API": [
+    "pricing/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Pricing",
+  "Contact": "pricing@shop.local",
+  "Id": "2ab3e6fa-37f6-4129-bb69-c9f375b6f41f"
+}

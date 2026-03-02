@@ -1,0 +1,11 @@
+{
+  "ServiceId": "PricingService",
+  "API": [
+    "inventory/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Inventory",
+  "Contact": "inventory@shop.local",
+  "Id": "b4ba9a10-a0ef-46a0-945c-7e902ad1147c"
+}

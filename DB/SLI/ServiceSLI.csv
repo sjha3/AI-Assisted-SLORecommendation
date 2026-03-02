@@ -1,0 +1,415 @@
+ServiceId,API,Type,Description,Value,Unit,Window,Timestamp
+CatalogService,catalog/v1,Availability,Availability SLI for catalog/v1,99.90,percent,28,2026-03-01T00:00:00Z
+CatalogService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.31,percent,28,2026-03-01T00:00:00Z
+CatalogService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,132.0,p95,28,2026-03-01T00:00:00Z
+CatalogService,catalog/v1,Availability,Availability SLI for catalog/v1,99.88,percent,28,2026-02-01T00:00:00Z
+CatalogService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.30,percent,28,2026-02-01T00:00:00Z
+CatalogService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,137.0,p95,28,2026-02-01T00:00:00Z
+CatalogService,catalog/v1,Availability,Availability SLI for catalog/v1,99.85,percent,28,2026-01-01T00:00:00Z
+CatalogService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.29,percent,28,2026-01-01T00:00:00Z
+CatalogService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,142.0,p95,28,2026-01-01T00:00:00Z
+CatalogService,catalog/v1,Availability,Availability SLI for catalog/v1,99.87,percent,28,2025-12-01T00:00:00Z
+CatalogService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.30,percent,28,2025-12-01T00:00:00Z
+CatalogService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,149.0,p95,28,2025-12-01T00:00:00Z
+CatalogService,catalog/v1,Availability,Availability SLI for catalog/v1,99.82,percent,28,2025-11-01T00:00:00Z
+CatalogService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.29,percent,28,2025-11-01T00:00:00Z
+CatalogService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,155.0,p95,28,2025-11-01T00:00:00Z
+CatalogService,catalog/v1,Availability,Availability SLI for catalog/v1,99.80,percent,28,2025-10-01T00:00:00Z
+CatalogService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.28,percent,28,2025-10-01T00:00:00Z
+CatalogService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,161.0,p95,28,2025-10-01T00:00:00Z
+PricingService,pricing/v1,Availability,Availability SLI for pricing/v1,99.90,percent,28,2026-03-01T00:00:00Z
+PricingService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.65,percent,28,2026-03-01T00:00:00Z
+PricingService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,132.0,p95,28,2026-03-01T00:00:00Z
+PricingService,pricing/v1,Availability,Availability SLI for pricing/v1,99.88,percent,28,2026-02-01T00:00:00Z
+PricingService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.64,percent,28,2026-02-01T00:00:00Z
+PricingService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,137.0,p95,28,2026-02-01T00:00:00Z
+PricingService,pricing/v1,Availability,Availability SLI for pricing/v1,99.85,percent,28,2026-01-01T00:00:00Z
+PricingService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.63,percent,28,2026-01-01T00:00:00Z
+PricingService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,142.0,p95,28,2026-01-01T00:00:00Z
+PricingService,pricing/v1,Availability,Availability SLI for pricing/v1,99.87,percent,28,2025-12-01T00:00:00Z
+PricingService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.64,percent,28,2025-12-01T00:00:00Z
+PricingService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,149.0,p95,28,2025-12-01T00:00:00Z
+PricingService,pricing/v1,Availability,Availability SLI for pricing/v1,99.82,percent,28,2025-11-01T00:00:00Z
+PricingService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.63,percent,28,2025-11-01T00:00:00Z
+PricingService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,155.0,p95,28,2025-11-01T00:00:00Z
+PricingService,pricing/v1,Availability,Availability SLI for pricing/v1,99.80,percent,28,2025-10-01T00:00:00Z
+PricingService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.62,percent,28,2025-10-01T00:00:00Z
+PricingService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,161.0,p95,28,2025-10-01T00:00:00Z
+PricingService,inventory/v1,Availability,Availability SLI for inventory/v1,99.90,percent,28,2026-03-01T00:00:00Z
+PricingService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.23,percent,28,2026-03-01T00:00:00Z
+PricingService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,135.0,p95,28,2026-03-01T00:00:00Z
+PricingService,inventory/v1,Availability,Availability SLI for inventory/v1,99.88,percent,28,2026-02-01T00:00:00Z
+PricingService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.22,percent,28,2026-02-01T00:00:00Z
+PricingService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,140.0,p95,28,2026-02-01T00:00:00Z
+PricingService,inventory/v1,Availability,Availability SLI for inventory/v1,99.85,percent,28,2026-01-01T00:00:00Z
+PricingService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.21,percent,28,2026-01-01T00:00:00Z
+PricingService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,145.0,p95,28,2026-01-01T00:00:00Z
+PricingService,inventory/v1,Availability,Availability SLI for inventory/v1,99.87,percent,28,2025-12-01T00:00:00Z
+PricingService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.22,percent,28,2025-12-01T00:00:00Z
+PricingService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,152.0,p95,28,2025-12-01T00:00:00Z
+PricingService,inventory/v1,Availability,Availability SLI for inventory/v1,99.82,percent,28,2025-11-01T00:00:00Z
+PricingService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.21,percent,28,2025-11-01T00:00:00Z
+PricingService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,158.0,p95,28,2025-11-01T00:00:00Z
+PricingService,inventory/v1,Availability,Availability SLI for inventory/v1,99.80,percent,28,2025-10-01T00:00:00Z
+PricingService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.20,percent,28,2025-10-01T00:00:00Z
+PricingService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,164.0,p95,28,2025-10-01T00:00:00Z
+PricingService,cart/v1,Availability,Availability SLI for cart/v1,99.90,percent,28,2026-03-01T00:00:00Z
+PricingService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.43,percent,28,2026-03-01T00:00:00Z
+PricingService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,133.0,p95,28,2026-03-01T00:00:00Z
+PricingService,cart/v1,Availability,Availability SLI for cart/v1,99.88,percent,28,2026-02-01T00:00:00Z
+PricingService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.42,percent,28,2026-02-01T00:00:00Z
+PricingService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,138.0,p95,28,2026-02-01T00:00:00Z
+PricingService,cart/v1,Availability,Availability SLI for cart/v1,99.85,percent,28,2026-01-01T00:00:00Z
+PricingService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.41,percent,28,2026-01-01T00:00:00Z
+PricingService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,143.0,p95,28,2026-01-01T00:00:00Z
+PricingService,cart/v1,Availability,Availability SLI for cart/v1,99.87,percent,28,2025-12-01T00:00:00Z
+PricingService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.42,percent,28,2025-12-01T00:00:00Z
+PricingService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,150.0,p95,28,2025-12-01T00:00:00Z
+PricingService,cart/v1,Availability,Availability SLI for cart/v1,99.82,percent,28,2025-11-01T00:00:00Z
+PricingService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.41,percent,28,2025-11-01T00:00:00Z
+PricingService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,156.0,p95,28,2025-11-01T00:00:00Z
+PricingService,cart/v1,Availability,Availability SLI for cart/v1,99.80,percent,28,2025-10-01T00:00:00Z
+PricingService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.40,percent,28,2025-10-01T00:00:00Z
+PricingService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,162.0,p95,28,2025-10-01T00:00:00Z
+CheckoutService,checkout/v1,Availability,Availability SLI for checkout/v1,99.90,percent,28,2026-03-01T00:00:00Z
+CheckoutService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.77,percent,28,2026-03-01T00:00:00Z
+CheckoutService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,123.0,p95,28,2026-03-01T00:00:00Z
+CheckoutService,checkout/v1,Availability,Availability SLI for checkout/v1,99.88,percent,28,2026-02-01T00:00:00Z
+CheckoutService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.76,percent,28,2026-02-01T00:00:00Z
+CheckoutService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,128.0,p95,28,2026-02-01T00:00:00Z
+CheckoutService,checkout/v1,Availability,Availability SLI for checkout/v1,99.85,percent,28,2026-01-01T00:00:00Z
+CheckoutService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.75,percent,28,2026-01-01T00:00:00Z
+CheckoutService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,133.0,p95,28,2026-01-01T00:00:00Z
+CheckoutService,checkout/v1,Availability,Availability SLI for checkout/v1,99.87,percent,28,2025-12-01T00:00:00Z
+CheckoutService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.76,percent,28,2025-12-01T00:00:00Z
+CheckoutService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,140.0,p95,28,2025-12-01T00:00:00Z
+CheckoutService,checkout/v1,Availability,Availability SLI for checkout/v1,99.82,percent,28,2025-11-01T00:00:00Z
+CheckoutService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.75,percent,28,2025-11-01T00:00:00Z
+CheckoutService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,146.0,p95,28,2025-11-01T00:00:00Z
+CheckoutService,checkout/v1,Availability,Availability SLI for checkout/v1,99.80,percent,28,2025-10-01T00:00:00Z
+CheckoutService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.74,percent,28,2025-10-01T00:00:00Z
+CheckoutService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,152.0,p95,28,2025-10-01T00:00:00Z
+PaymentGateway,payment/v1,Availability,Availability SLI for payment/v1,99.90,percent,28,2026-03-01T00:00:00Z
+PaymentGateway,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.02,percent,28,2026-03-01T00:00:00Z
+PaymentGateway,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,135.0,p95,28,2026-03-01T00:00:00Z
+PaymentGateway,payment/v1,Availability,Availability SLI for payment/v1,99.88,percent,28,2026-02-01T00:00:00Z
+PaymentGateway,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.01,percent,28,2026-02-01T00:00:00Z
+PaymentGateway,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,140.0,p95,28,2026-02-01T00:00:00Z
+PaymentGateway,payment/v1,Availability,Availability SLI for payment/v1,99.85,percent,28,2026-01-01T00:00:00Z
+PaymentGateway,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.00,percent,28,2026-01-01T00:00:00Z
+PaymentGateway,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,145.0,p95,28,2026-01-01T00:00:00Z
+PaymentGateway,payment/v1,Availability,Availability SLI for payment/v1,99.87,percent,28,2025-12-01T00:00:00Z
+PaymentGateway,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.01,percent,28,2025-12-01T00:00:00Z
+PaymentGateway,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,152.0,p95,28,2025-12-01T00:00:00Z
+PaymentGateway,payment/v1,Availability,Availability SLI for payment/v1,99.82,percent,28,2025-11-01T00:00:00Z
+PaymentGateway,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.00,percent,28,2025-11-01T00:00:00Z
+PaymentGateway,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,158.0,p95,28,2025-11-01T00:00:00Z
+PaymentGateway,payment/v1,Availability,Availability SLI for payment/v1,99.80,percent,28,2025-10-01T00:00:00Z
+PaymentGateway,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.99,percent,28,2025-10-01T00:00:00Z
+PaymentGateway,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,164.0,p95,28,2025-10-01T00:00:00Z
+PaymentService,payment/v1,Availability,Availability SLI for payment/v1,99.90,percent,28,2026-03-01T00:00:00Z
+PaymentService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.01,percent,28,2026-03-01T00:00:00Z
+PaymentService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,134.0,p95,28,2026-03-01T00:00:00Z
+PaymentService,payment/v1,Availability,Availability SLI for payment/v1,99.88,percent,28,2026-02-01T00:00:00Z
+PaymentService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.00,percent,28,2026-02-01T00:00:00Z
+PaymentService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,139.0,p95,28,2026-02-01T00:00:00Z
+PaymentService,payment/v1,Availability,Availability SLI for payment/v1,99.85,percent,28,2026-01-01T00:00:00Z
+PaymentService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.99,percent,28,2026-01-01T00:00:00Z
+PaymentService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,144.0,p95,28,2026-01-01T00:00:00Z
+PaymentService,payment/v1,Availability,Availability SLI for payment/v1,99.87,percent,28,2025-12-01T00:00:00Z
+PaymentService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.00,percent,28,2025-12-01T00:00:00Z
+PaymentService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,151.0,p95,28,2025-12-01T00:00:00Z
+PaymentService,payment/v1,Availability,Availability SLI for payment/v1,99.82,percent,28,2025-11-01T00:00:00Z
+PaymentService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.99,percent,28,2025-11-01T00:00:00Z
+PaymentService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,157.0,p95,28,2025-11-01T00:00:00Z
+PaymentService,payment/v1,Availability,Availability SLI for payment/v1,99.80,percent,28,2025-10-01T00:00:00Z
+PaymentService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.98,percent,28,2025-10-01T00:00:00Z
+PaymentService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,163.0,p95,28,2025-10-01T00:00:00Z
+OrderService,orders/v1,Availability,Availability SLI for orders/v1,99.90,percent,28,2026-03-01T00:00:00Z
+OrderService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.64,percent,28,2026-03-01T00:00:00Z
+OrderService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,120.0,p95,28,2026-03-01T00:00:00Z
+OrderService,orders/v1,Availability,Availability SLI for orders/v1,99.88,percent,28,2026-02-01T00:00:00Z
+OrderService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.63,percent,28,2026-02-01T00:00:00Z
+OrderService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,142.0,p95,28,2026-02-01T00:00:00Z
+OrderService,orders/v1,Availability,Availability SLI for orders/v1,99.85,percent,28,2026-01-01T00:00:00Z
+OrderService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.62,percent,28,2026-01-01T00:00:00Z
+OrderService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,147.0,p95,28,2026-01-01T00:00:00Z
+OrderService,orders/v1,Availability,Availability SLI for orders/v1,99.87,percent,28,2025-12-01T00:00:00Z
+OrderService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.63,percent,28,2025-12-01T00:00:00Z
+OrderService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,154.0,p95,28,2025-12-01T00:00:00Z
+OrderService,orders/v1,Availability,Availability SLI for orders/v1,99.82,percent,28,2025-11-01T00:00:00Z
+OrderService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.62,percent,28,2025-11-01T00:00:00Z
+OrderService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,160.0,p95,28,2025-11-01T00:00:00Z
+OrderService,orders/v1,Availability,Availability SLI for orders/v1,99.80,percent,28,2025-10-01T00:00:00Z
+OrderService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.61,percent,28,2025-10-01T00:00:00Z
+OrderService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,166.0,p95,28,2025-10-01T00:00:00Z
+ShippingService,shipping/v1,Availability,Availability SLI for shipping/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ShippingService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.01,percent,28,2026-03-01T00:00:00Z
+ShippingService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,130.0,p95,28,2026-03-01T00:00:00Z
+ShippingService,shipping/v1,Availability,Availability SLI for shipping/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ShippingService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.00,percent,28,2026-02-01T00:00:00Z
+ShippingService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,135.0,p95,28,2026-02-01T00:00:00Z
+ShippingService,shipping/v1,Availability,Availability SLI for shipping/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ShippingService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.99,percent,28,2026-01-01T00:00:00Z
+ShippingService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,140.0,p95,28,2026-01-01T00:00:00Z
+ShippingService,shipping/v1,Availability,Availability SLI for shipping/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ShippingService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.00,percent,28,2025-12-01T00:00:00Z
+ShippingService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,147.0,p95,28,2025-12-01T00:00:00Z
+ShippingService,shipping/v1,Availability,Availability SLI for shipping/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ShippingService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.99,percent,28,2025-11-01T00:00:00Z
+ShippingService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,153.0,p95,28,2025-11-01T00:00:00Z
+ShippingService,shipping/v1,Availability,Availability SLI for shipping/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ShippingService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.98,percent,28,2025-10-01T00:00:00Z
+ShippingService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,159.0,p95,28,2025-10-01T00:00:00Z
+NotificationService,notification/v1,Availability,Availability SLI for notification/v1,99.90,percent,28,2026-03-01T00:00:00Z
+NotificationService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.43,percent,28,2026-03-01T00:00:00Z
+NotificationService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,122.0,p95,28,2026-03-01T00:00:00Z
+NotificationService,notification/v1,Availability,Availability SLI for notification/v1,99.88,percent,28,2026-02-01T00:00:00Z
+NotificationService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.42,percent,28,2026-02-01T00:00:00Z
+NotificationService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,127.0,p95,28,2026-02-01T00:00:00Z
+NotificationService,notification/v1,Availability,Availability SLI for notification/v1,99.85,percent,28,2026-01-01T00:00:00Z
+NotificationService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.41,percent,28,2026-01-01T00:00:00Z
+NotificationService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,132.0,p95,28,2026-01-01T00:00:00Z
+NotificationService,notification/v1,Availability,Availability SLI for notification/v1,99.87,percent,28,2025-12-01T00:00:00Z
+NotificationService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.42,percent,28,2025-12-01T00:00:00Z
+NotificationService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,139.0,p95,28,2025-12-01T00:00:00Z
+NotificationService,notification/v1,Availability,Availability SLI for notification/v1,99.82,percent,28,2025-11-01T00:00:00Z
+NotificationService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.41,percent,28,2025-11-01T00:00:00Z
+NotificationService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,145.0,p95,28,2025-11-01T00:00:00Z
+NotificationService,notification/v1,Availability,Availability SLI for notification/v1,99.80,percent,28,2025-10-01T00:00:00Z
+NotificationService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.40,percent,28,2025-10-01T00:00:00Z
+NotificationService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,168.0,p95,28,2025-10-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.90,percent,28,2026-03-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.52,percent,28,2026-03-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,134.0,p95,28,2026-03-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.88,percent,28,2026-02-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.51,percent,28,2026-02-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,139.0,p95,28,2026-02-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.85,percent,28,2026-01-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.50,percent,28,2026-01-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,144.0,p95,28,2026-01-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.87,percent,28,2025-12-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.51,percent,28,2025-12-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,151.0,p95,28,2025-12-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.82,percent,28,2025-11-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.50,percent,28,2025-11-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,157.0,p95,28,2025-11-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.80,percent,28,2025-10-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.49,percent,28,2025-10-01T00:00:00Z
+CustomerProfileService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,163.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Availability,Availability SLI for catalog/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.34,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,125.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Availability,Availability SLI for catalog/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.33,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,130.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Availability,Availability SLI for catalog/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.32,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,135.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Availability,Availability SLI for catalog/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.33,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,142.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Availability,Availability SLI for catalog/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.32,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,148.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Availability,Availability SLI for catalog/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,ErrorRate,ErrorRate SLI for catalog/v1,1.31,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,catalog/v1,Latency,Latency SLI (p95) for catalog/v1 in ms,154.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Availability,Availability SLI for pricing/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.51,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,125.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Availability,Availability SLI for pricing/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.50,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,130.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Availability,Availability SLI for pricing/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.49,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,135.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Availability,Availability SLI for pricing/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.50,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,142.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Availability,Availability SLI for pricing/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.49,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,148.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Availability,Availability SLI for pricing/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,ErrorRate,ErrorRate SLI for pricing/v1,1.48,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,pricing/v1,Latency,Latency SLI (p95) for pricing/v1 in ms,154.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Availability,Availability SLI for inventory/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.09,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,128.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Availability,Availability SLI for inventory/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.08,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,133.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Availability,Availability SLI for inventory/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.07,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,138.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Availability,Availability SLI for inventory/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.08,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,145.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Availability,Availability SLI for inventory/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.07,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,151.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Availability,Availability SLI for inventory/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,ErrorRate,ErrorRate SLI for inventory/v1,1.06,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,inventory/v1,Latency,Latency SLI (p95) for inventory/v1 in ms,157.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Availability,Availability SLI for cart/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.29,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,126.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Availability,Availability SLI for cart/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.28,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,131.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Availability,Availability SLI for cart/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.27,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,136.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Availability,Availability SLI for cart/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.28,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,143.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Availability,Availability SLI for cart/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.27,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,149.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Availability,Availability SLI for cart/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,cart/v1,ErrorRate,ErrorRate SLI for cart/v1,1.26,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,cart/v1,Latency,Latency SLI (p95) for cart/v1 in ms,155.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Availability,Availability SLI for checkout/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.57,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,129.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Availability,Availability SLI for checkout/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.56,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,134.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Availability,Availability SLI for checkout/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.55,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,139.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Availability,Availability SLI for checkout/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.56,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,146.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Availability,Availability SLI for checkout/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.55,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,152.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Availability,Availability SLI for checkout/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,ErrorRate,ErrorRate SLI for checkout/v1,1.54,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,checkout/v1,Latency,Latency SLI (p95) for checkout/v1 in ms,158.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Availability,Availability SLI for payment/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.69,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,126.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Availability,Availability SLI for payment/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.68,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,131.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Availability,Availability SLI for payment/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.67,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,136.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Availability,Availability SLI for payment/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.68,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,143.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Availability,Availability SLI for payment/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.67,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,149.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Availability,Availability SLI for payment/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,payment/v1,ErrorRate,ErrorRate SLI for payment/v1,1.66,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,payment/v1,Latency,Latency SLI (p95) for payment/v1 in ms,155.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Availability,Availability SLI for orders/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.58,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,134.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Availability,Availability SLI for orders/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.57,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,139.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Availability,Availability SLI for orders/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.56,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,144.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Availability,Availability SLI for orders/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.57,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,151.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Availability,Availability SLI for orders/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.56,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,157.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Availability,Availability SLI for orders/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,orders/v1,ErrorRate,ErrorRate SLI for orders/v1,1.55,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,orders/v1,Latency,Latency SLI (p95) for orders/v1 in ms,163.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Availability,Availability SLI for shipping/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.69,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,124.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Availability,Availability SLI for shipping/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.68,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,129.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Availability,Availability SLI for shipping/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.67,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,134.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Availability,Availability SLI for shipping/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.68,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,141.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Availability,Availability SLI for shipping/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.67,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,147.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Availability,Availability SLI for shipping/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,ErrorRate,ErrorRate SLI for shipping/v1,1.66,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,shipping/v1,Latency,Latency SLI (p95) for shipping/v1 in ms,153.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Availability,Availability SLI for notification/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,120.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Availability,Availability SLI for notification/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.89,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,142.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Availability,Availability SLI for notification/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.88,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,147.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Availability,Availability SLI for notification/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.89,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,154.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Availability,Availability SLI for notification/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.88,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,160.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Availability,Availability SLI for notification/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,notification/v1,ErrorRate,ErrorRate SLI for notification/v1,1.87,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,notification/v1,Latency,Latency SLI (p95) for notification/v1 in ms,166.0,p95,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.90,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.83,percent,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,122.0,p95,28,2026-03-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.88,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.82,percent,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,127.0,p95,28,2026-02-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.85,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.81,percent,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,132.0,p95,28,2026-01-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.87,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.82,percent,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,139.0,p95,28,2025-12-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.82,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.81,percent,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,145.0,p95,28,2025-11-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Availability,Availability SLI for customer-profile/v1,99.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,ErrorRate,ErrorRate SLI for customer-profile/v1,1.80,percent,28,2025-10-01T00:00:00Z
+ECommerceGatewayService,customer-profile/v1,Latency,Latency SLI (p95) for customer-profile/v1 in ms,168.0,p95,28,2025-10-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Availability,Availability SLI for documentdb/v1/read,99.97,percent,28,2026-03-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,ErrorRate,ErrorRate SLI for documentdb/v1/read,0.28,percent,28,2026-03-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Latency,Latency SLI (p95) for documentdb/v1/read in ms,32.0,p95,28,2026-03-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Availability,Availability SLI for documentdb/v1/read,99.96,percent,28,2026-02-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,ErrorRate,ErrorRate SLI for documentdb/v1/read,0.30,percent,28,2026-02-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Latency,Latency SLI (p95) for documentdb/v1/read in ms,34.0,p95,28,2026-02-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Availability,Availability SLI for documentdb/v1/read,99.95,percent,28,2026-01-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,ErrorRate,ErrorRate SLI for documentdb/v1/read,0.32,percent,28,2026-01-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Latency,Latency SLI (p95) for documentdb/v1/read in ms,36.0,p95,28,2026-01-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Availability,Availability SLI for documentdb/v1/read,99.95,percent,28,2025-12-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,ErrorRate,ErrorRate SLI for documentdb/v1/read,0.33,percent,28,2025-12-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Latency,Latency SLI (p95) for documentdb/v1/read in ms,38.0,p95,28,2025-12-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Availability,Availability SLI for documentdb/v1/read,99.94,percent,28,2025-11-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,ErrorRate,ErrorRate SLI for documentdb/v1/read,0.35,percent,28,2025-11-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Latency,Latency SLI (p95) for documentdb/v1/read in ms,41.0,p95,28,2025-11-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Availability,Availability SLI for documentdb/v1/read,99.93,percent,28,2025-10-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,ErrorRate,ErrorRate SLI for documentdb/v1/read,0.37,percent,28,2025-10-01T00:00:00Z
+DocumentDBService,documentdb/v1/read,Latency,Latency SLI (p95) for documentdb/v1/read in ms,44.0,p95,28,2025-10-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Availability,Availability SLI for documentdb/v1/write,99.96,percent,28,2026-03-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,ErrorRate,ErrorRate SLI for documentdb/v1/write,0.34,percent,28,2026-03-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Latency,Latency SLI (p95) for documentdb/v1/write in ms,39.0,p95,28,2026-03-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Availability,Availability SLI for documentdb/v1/write,99.95,percent,28,2026-02-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,ErrorRate,ErrorRate SLI for documentdb/v1/write,0.36,percent,28,2026-02-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Latency,Latency SLI (p95) for documentdb/v1/write in ms,41.0,p95,28,2026-02-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Availability,Availability SLI for documentdb/v1/write,99.94,percent,28,2026-01-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,ErrorRate,ErrorRate SLI for documentdb/v1/write,0.38,percent,28,2026-01-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Latency,Latency SLI (p95) for documentdb/v1/write in ms,44.0,p95,28,2026-01-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Availability,Availability SLI for documentdb/v1/write,99.94,percent,28,2025-12-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,ErrorRate,ErrorRate SLI for documentdb/v1/write,0.39,percent,28,2025-12-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Latency,Latency SLI (p95) for documentdb/v1/write in ms,47.0,p95,28,2025-12-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Availability,Availability SLI for documentdb/v1/write,99.93,percent,28,2025-11-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,ErrorRate,ErrorRate SLI for documentdb/v1/write,0.41,percent,28,2025-11-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Latency,Latency SLI (p95) for documentdb/v1/write in ms,50.0,p95,28,2025-11-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Availability,Availability SLI for documentdb/v1/write,99.92,percent,28,2025-10-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,ErrorRate,ErrorRate SLI for documentdb/v1/write,0.43,percent,28,2025-10-01T00:00:00Z
+DocumentDBService,documentdb/v1/write,Latency,Latency SLI (p95) for documentdb/v1/write in ms,53.0,p95,28,2025-10-01T00:00:00Z

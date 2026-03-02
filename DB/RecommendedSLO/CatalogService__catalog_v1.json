@@ -1,0 +1,98 @@
+{
+  "ServiceId": "CatalogService",
+  "API": "catalog/v1",
+  "entries": [
+    {
+      "SavedAt": "2026-03-02T18:38:09Z",
+      "SLOs": [
+        {
+          "Type": "Availability",
+          "Target": 99.91,
+          "Unit": "percent",
+          "Window": "28"
+        },
+        {
+          "Type": "Latency",
+          "Target": 140.0,
+          "Unit": "ms",
+          "Window": "28"
+        },
+        {
+          "Type": "ErrorRate",
+          "Target": 1.2,
+          "Unit": "percent",
+          "Window": "28"
+        }
+      ]
+    },
+    {
+      "SavedAt": "2026-03-02T18:39:43Z",
+      "SLOs": [
+        {
+          "Type": "Availability",
+          "Target": 99.91,
+          "Unit": "percent",
+          "Window": "28"
+        },
+        {
+          "Type": "Latency",
+          "Target": 140.0,
+          "Unit": "ms",
+          "Window": "28"
+        },
+        {
+          "Type": "ErrorRate",
+          "Target": 1.2,
+          "Unit": "percent",
+          "Window": "28"
+        }
+      ]
+    },
+    {
+      "SavedAt": "2026-03-02T18:42:12Z",
+      "SLOs": [
+        {
+          "Type": "Availability",
+          "Target": 99.9,
+          "Unit": "percent",
+          "Window": "28"
+        },
+        {
+          "Type": "Latency",
+          "Target": 132.0,
+          "Unit": "p95",
+          "Window": "28"
+        },
+        {
+          "Type": "ErrorRate",
+          "Target": 1.31,
+          "Unit": "percent",
+          "Window": "28"
+        }
+      ]
+    },
+    {
+      "SavedAt": "2026-03-02T18:44:54Z",
+      "SLOs": [
+        {
+          "Type": "Availability",
+          "Target": 99.9,
+          "Unit": "percent",
+          "Window": "28"
+        },
+        {
+          "Type": "Latency",
+          "Target": 132.0,
+          "Unit": "p95",
+          "Window": "28"
+        },
+        {
+          "Type": "ErrorRate",
+          "Target": 1.31,
+          "Unit": "percent",
+          "Window": "28"
+        }
+      ]
+    }
+  ]
+}

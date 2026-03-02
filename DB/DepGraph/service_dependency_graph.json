@@ -1,0 +1,303 @@
+{
+  "nodes": [
+    {
+      "service_id": "PricingService"
+    },
+    {
+      "service_id": "CatalogService"
+    },
+    {
+      "service_id": "DocumentDBService"
+    },
+    {
+      "service_id": "CheckoutService"
+    },
+    {
+      "service_id": "CustomerProfileService"
+    },
+    {
+      "service_id": "PaymentService"
+    },
+    {
+      "service_id": "PaymentGateway"
+    },
+    {
+      "service_id": "OrderService"
+    },
+    {
+      "service_id": "ShippingService"
+    },
+    {
+      "service_id": "NotificationService"
+    },
+    {
+      "service_id": "ECommerceGatewayService"
+    }
+  ],
+  "edges": [
+    {
+      "from_service_id": "PricingService",
+      "from_api": "pricing/v1",
+      "to_service_id": "CatalogService",
+      "to_api": "catalog/v1"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "pricing/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "pricing/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "inventory/v1",
+      "to_service_id": "CatalogService",
+      "to_api": "catalog/v1"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "inventory/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "inventory/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "cart/v1",
+      "to_service_id": "CatalogService",
+      "to_api": "catalog/v1"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "cart/v1",
+      "to_service_id": "PricingService",
+      "to_api": "pricing/v1"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "cart/v1",
+      "to_service_id": "PricingService",
+      "to_api": "inventory/v1"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "cart/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "PricingService",
+      "from_api": "cart/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "CheckoutService",
+      "from_api": "checkout/v1",
+      "to_service_id": "PricingService",
+      "to_api": "cart/v1"
+    },
+    {
+      "from_service_id": "CheckoutService",
+      "from_api": "checkout/v1",
+      "to_service_id": "PricingService",
+      "to_api": "pricing/v1"
+    },
+    {
+      "from_service_id": "CheckoutService",
+      "from_api": "checkout/v1",
+      "to_service_id": "PricingService",
+      "to_api": "inventory/v1"
+    },
+    {
+      "from_service_id": "CheckoutService",
+      "from_api": "checkout/v1",
+      "to_service_id": "CustomerProfileService",
+      "to_api": "customer-profile/v1"
+    },
+    {
+      "from_service_id": "CheckoutService",
+      "from_api": "checkout/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "CheckoutService",
+      "from_api": "checkout/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "PaymentService",
+      "from_api": "payment/v1",
+      "to_service_id": "PaymentGateway",
+      "to_api": "payment/v1"
+    },
+    {
+      "from_service_id": "PaymentService",
+      "from_api": "payment/v1",
+      "to_service_id": "CheckoutService",
+      "to_api": "checkout/v1"
+    },
+    {
+      "from_service_id": "PaymentService",
+      "from_api": "payment/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "PaymentService",
+      "from_api": "payment/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "OrderService",
+      "from_api": "orders/v1",
+      "to_service_id": "CheckoutService",
+      "to_api": "checkout/v1"
+    },
+    {
+      "from_service_id": "OrderService",
+      "from_api": "orders/v1",
+      "to_service_id": "PaymentService",
+      "to_api": "payment/v1"
+    },
+    {
+      "from_service_id": "OrderService",
+      "from_api": "orders/v1",
+      "to_service_id": "PricingService",
+      "to_api": "inventory/v1"
+    },
+    {
+      "from_service_id": "OrderService",
+      "from_api": "orders/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "OrderService",
+      "from_api": "orders/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "ShippingService",
+      "from_api": "shipping/v1",
+      "to_service_id": "OrderService",
+      "to_api": "orders/v1"
+    },
+    {
+      "from_service_id": "ShippingService",
+      "from_api": "shipping/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "ShippingService",
+      "from_api": "shipping/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "NotificationService",
+      "from_api": "notification/v1",
+      "to_service_id": "OrderService",
+      "to_api": "orders/v1"
+    },
+    {
+      "from_service_id": "NotificationService",
+      "from_api": "notification/v1",
+      "to_service_id": "ShippingService",
+      "to_api": "shipping/v1"
+    },
+    {
+      "from_service_id": "NotificationService",
+      "from_api": "notification/v1",
+      "to_service_id": "PaymentService",
+      "to_api": "payment/v1"
+    },
+    {
+      "from_service_id": "NotificationService",
+      "from_api": "notification/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/read"
+    },
+    {
+      "from_service_id": "NotificationService",
+      "from_api": "notification/v1",
+      "to_service_id": "DocumentDBService",
+      "to_api": "documentdb/v1/write"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "CatalogService",
+      "to_api": "catalog/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "PricingService",
+      "to_api": "pricing/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "PricingService",
+      "to_api": "inventory/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "PricingService",
+      "to_api": "cart/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "CheckoutService",
+      "to_api": "checkout/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "PaymentService",
+      "to_api": "payment/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "OrderService",
+      "to_api": "orders/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "ShippingService",
+      "to_api": "shipping/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "NotificationService",
+      "to_api": "notification/v1"
+    },
+    {
+      "from_service_id": "ECommerceGatewayService",
+      "from_api": "catalog/v1",
+      "to_service_id": "CustomerProfileService",
+      "to_api": "customer-profile/v1"
+    }
+  ]
+}

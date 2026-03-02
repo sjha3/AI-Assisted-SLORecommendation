@@ -1,0 +1,11 @@
+{
+  "ServiceId": "CatalogService",
+  "API": [
+    "catalog/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Catalog",
+  "Contact": "catalog@shop.local",
+  "Id": "d802f5ba-9c05-4142-8f36-69fdd85d4212"
+}

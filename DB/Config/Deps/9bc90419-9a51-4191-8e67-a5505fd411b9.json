@@ -1,0 +1,27 @@
+{
+  "ServiceId": "NotificationService",
+  "API": "notification/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1"
+    },
+    {
+      "ServiceId": "ShippingService",
+      "API": "shipping/v1"
+    },
+    {
+      "ServiceId": "PaymentService",
+      "API": "payment/v1"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write"
+    }
+  ],
+  "Id": "9bc90419-9a51-4191-8e67-a5505fd411b9"
+}

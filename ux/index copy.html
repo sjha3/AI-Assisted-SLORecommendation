@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dependencies Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 18px; background: #f6f7fb; color: #1f2937; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    .app-layout { display: flex; gap: 16px; min-height: calc(100vh - 36px); }
+    .side-panel { width: 240px; display: flex; flex-direction: column; gap: 8px; }
+    .content-panel { flex: 1; min-width: 0; }
+    .tab-btn { width: 100%; text-align: left; }
+    .tab-btn.active { background: #1d4ed8; }
+    .tab-view.hidden { display: none; }
+    .row { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+    input { padding: 8px 10px; width: 280px; border: 1px solid #cbd5e1; border-radius: 6px; }
+    button { padding: 8px 14px; border: none; border-radius: 6px; background: #2563eb; color: white; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; }
+    .meta { margin-bottom: 10px; font-size: 14px; color: #4b5563; }
+    .error { color: #b91c1c; margin-top: 8px; }
+    .graph-wrap { width: 100%; overflow: auto; }
+    #graphSvg { width: 100%; height: 560px; border: 1px solid #e5e7eb; border-radius: 6px; background: #ffffff; }
+    .edge { stroke: #94a3b8; stroke-width: 1.5; opacity: 0.9; }
+    .node { fill: #2563eb; stroke: #1e40af; stroke-width: 1.5; }
+    .node-label { font-size: 12px; fill: #0f172a; }
+    .node-sli { font-size: 10px; fill: #334155; }
+    .node-slo { font-size: 10px; fill: #0f766e; }
+    .node-group { cursor: grab; }
+    .node-group.dragging { cursor: grabbing; }
+    .table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .table th, .table td { border: 1px solid #e5e7eb; padding: 6px 8px; font-size: 13px; text-align: left; }
+    .table th { background: #f8fafc; }
+    pre { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="side-panel card">
+      <h2>Navigation</h2>
+      <button class="tab-btn active" data-tab="graphTab">Graph</button>
+      <button class="tab-btn" data-tab="recommendTab">GetSLORecommendation</button>
+      <button class="tab-btn" data-tab="impactTab">ImpactAnalysis</button>
+    </aside>
+
+    <main class="content-panel">
+      <section id="graphTab" class="tab-view">
+        <h1>Services and Dependencies</h1>
+        <div class="row">
+          <label for="apiBase">DepsManager API Base:</label>
+          <input id="apiBase" value="http://127.0.0.1:8003" />
+          <label for="sliApiBase">SLI API Base:</label>
+          <input id="sliApiBase" value="http://127.0.0.1:8002" />
+          <label for="sloApiBase">Knowledge_SLO API Base:</label>
+          <input id="sloApiBase" value="http://127.0.0.1:8004" />
+          <button id="loadBtn">Load Graph</button>
+        </div>
+        <div id="status" class="meta">Click "Load Graph" to fetch data.</div>
+        <div id="error" class="error"></div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <h3>Dependency Graph</h3>
+          <div class="meta">Circles are services, lines are dependency edges (`from_service -> to_service`). Drag circles to rearrange.</div>
+          <div class="graph-wrap">
+            <svg id="graphSvg" viewBox="0 0 1100 560" preserveAspectRatio="xMidYMid meet"></svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="recommendTab" class="tab-view hidden">
+        <h1>Get SLO Recommendation</h1>
+        <div class="card" style="margin-bottom:16px;">
+          <h3>SLO Recommendation</h3>
+          <div class="row">
+            <label for="recommendApiBase">SLO_Recommend API Base:</label>
+            <input id="recommendApiBase" value="http://127.0.0.1:8008" />
+            <label for="recommendServiceId">Service ID:</label>
+            <input id="recommendServiceId" value="CatalogService" />
+            <label for="recommendApi">API:</label>
+            <input id="recommendApi" value="catalog/v1" />
+            <button id="recommendBtn">Get Recommendation</button>
+            <button id="acceptRecommendBtn" disabled>Accept Recommended SLO</button>
+          </div>
+          <div id="recommendStatus" class="meta">Enter service details and click "Get Recommendation".</div>
+          <div id="acceptStatus" class="meta"></div>
+          <div id="recommendError" class="error"></div>
+          <div id="acceptError" class="error"></div>
+          <div id="recommendResult"></div>
+        </div>
+      </section>
+
+      <section id="impactTab" class="tab-view hidden">
+        <h1>Impact Analysis</h1>
+        <div class="card" style="margin-bottom:16px;">
+          <h3>Run Analysis</h3>
+          <div class="row">
+            <label for="impactApiBase">SLO_Recommend API Base:</label>
+            <input id="impactApiBase" value="http://127.0.0.1:8008" />
+            <label for="impactServiceId">Service ID:</label>
+            <input id="impactServiceId" value="PricingService" />
+            <label for="impactApi">API:</label>
+            <input id="impactApi" value="inventory/v1" />
+          </div>
+
+          <h3 style="margin-top:10px;">New SLO Inputs</h3>
+          <div class="row">
+            <label for="newAvailability">Availability Target:</label>
+            <input id="newAvailability" type="number" step="0.0001" value="99.9" />
+            <label for="newLatency">Latency Target:</label>
+            <input id="newLatency" type="number" step="0.0001" value="150" />
+            <label for="newErrorRate">ErrorRate Target:</label>
+            <input id="newErrorRate" type="number" step="0.0001" value="1.2" />
+            <button id="analyzeBtn">Analyze Impact</button>
+          </div>
+
+          <div id="impactStatus" class="meta">Provide inputs and click "Analyze Impact".</div>
+          <div id="impactError" class="error"></div>
+        </div>
+
+        <div id="impactResult"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabViews = document.querySelectorAll('.tab-view');
+
+    function setActiveTab(tabId) {
+      tabViews.forEach((view) => {
+        view.classList.toggle('hidden', view.id !== tabId);
+      });
+      tabButtons.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.tab === tabId);
+      });
+    }
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => setActiveTab(btn.dataset.tab));
+    });
+
+    setActiveTab('graphTab');
+  </script>
+
+  <script>
+    const loadBtn = document.getElementById('loadBtn');
+    const apiBaseInput = document.getElementById('apiBase');
+    const sliApiBaseInput = document.getElementById('sliApiBase');
+    const sloApiBaseInput = document.getElementById('sloApiBase');
+    const status = document.getElementById('status');
+    const error = document.getElementById('error');
+    const graphSvg = document.getElementById('graphSvg');
+    const recommendBtn = document.getElementById('recommendBtn');
+    const recommendApiBaseInput = document.getElementById('recommendApiBase');
+    const recommendServiceIdInput = document.getElementById('recommendServiceId');
+    const recommendApiInput = document.getElementById('recommendApi');
+    const recommendStatus = document.getElementById('recommendStatus');
+    const acceptStatus = document.getElementById('acceptStatus');
+    const recommendError = document.getElementById('recommendError');
+    const acceptError = document.getElementById('acceptError');
+    const recommendResult = document.getElementById('recommendResult');
+    const acceptRecommendBtn = document.getElementById('acceptRecommendBtn');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const impactApiBaseInput = document.getElementById('impactApiBase');
+    const impactServiceIdInput = document.getElementById('impactServiceId');
+    const impactApiInput = document.getElementById('impactApi');
+    const newAvailabilityInput = document.getElementById('newAvailability');
+    const newLatencyInput = document.getElementById('newLatency');
+    const newErrorRateInput = document.getElementById('newErrorRate');
+    const impactStatus = document.getElementById('impactStatus');
+    const impactError = document.getElementById('impactError');
+    const impactResult = document.getElementById('impactResult');
+    let latestRecommendationData = null;
+
+    function clearGraph() {
+      while (graphSvg.firstChild) {
+        graphSvg.removeChild(graphSvg.firstChild);
+      }
+    }
+
+    function buildSliSummary(rows) {
+      if (!Array.isArray(rows) || rows.length === 0) {
+        return { short: 'No SLI', full: 'No SLI returned' };
+      }
+
+      const byType = {};
+      for (const row of rows) {
+        const type = row.Type;
+        const value = Number(row.Value);
+        if (!type || Number.isNaN(value)) continue;
+        if (!byType[type]) byType[type] = [];
+        byType[type].push(value);
+      }
+
+      const avg = (arr) => arr && arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null;
+      const a = avg(byType.Availability);
+      const l = avg(byType.Latency);
+      const e = avg(byType.ErrorRate);
+
+      const shortParts = [];
+      if (a !== null) shortParts.push(`A:${a.toFixed(2)}`);
+      if (l !== null) shortParts.push(`L:${l.toFixed(1)}`);
+      if (e !== null) shortParts.push(`E:${e.toFixed(2)}`);
+
+      const detailRows = rows
+        .map(r => `${r.API} | ${r.Type}: ${r.Value} ${r.Unit}`)
+        .slice(0, 15)
+        .join('\n');
+
+      return {
+        short: shortParts.length ? shortParts.join(' ') : 'No SLI',
+        full: detailRows || 'No SLI returned',
+      };
+    }
+
+    function buildSloSummary(rows) {
+      if (!Array.isArray(rows) || rows.length === 0) {
+        return { short: 'No SLO', full: 'No SLO returned' };
+      }
+
+      const byType = {};
+      for (const row of rows) {
+        const type = row.Type;
+        const value = Number(row.Target);
+        if (!type || Number.isNaN(value)) continue;
+        if (!byType[type]) byType[type] = [];
+        byType[type].push(value);
+      }
+
+      const avg = (arr) => arr && arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null;
+      const a = avg(byType.Availability);
+      const l = avg(byType.Latency);
+      const e = avg(byType.ErrorRate);
+
+      const shortParts = [];
+      if (a !== null) shortParts.push(`A:${a.toFixed(2)}`);
+      if (l !== null) shortParts.push(`L:${l.toFixed(1)}`);
+      if (e !== null) shortParts.push(`E:${e.toFixed(2)}`);
+
+      const detailRows = rows
+        .map(r => `${r.API} | ${r.Type}: ${r.Target} ${r.Unit}`)
+        .slice(0, 15)
+        .join('\n');
+
+      return {
+        short: shortParts.length ? shortParts.join(' ') : 'No SLO',
+        full: detailRows || 'No SLO returned',
+      };
+    }
+
+    async function fetchServiceSliMap(services, sliBase) {
+      const map = new Map();
+      const tasks = services.map(async (service) => {
+        try {
+          const url = `${sliBase}/slis/latest?service_id=${encodeURIComponent(service)}`;
+          const response = await fetch(url);
+          if (!response.ok) {
+            map.set(service, { short: 'No SLI', full: `SLI API ${response.status}` });
+            return;
+          }
+          const rows = await response.json();
+          map.set(service, buildSliSummary(rows));
+        } catch (err) {
+          map.set(service, { short: 'No SLI', full: `SLI fetch error: ${err.message}` });
+        }
+      });
+      await Promise.all(tasks);
+      return map;
+    }
+
+    async function fetchServiceSloMap(services, sloBase) {
+      const map = new Map();
+      const tasks = services.map(async (service) => {
+        try {
+          const url = `${sloBase}/slos/service/latest?service_id=${encodeURIComponent(service)}`;
+          const response = await fetch(url);
+          if (!response.ok) {
+            map.set(service, { short: 'No SLO', full: `SLO API ${response.status}` });
+            return;
+          }
+          const rows = await response.json();
+          map.set(service, buildSloSummary(rows));
+        } catch (err) {
+          map.set(service, { short: 'No SLO', full: `SLO fetch error: ${err.message}` });
+        }
+      });
+      await Promise.all(tasks);
+      return map;
+    }
+
+    function renderGraph(nodes, edges, serviceSliMap, serviceSloMap) {
+      clearGraph();
+
+      const width = 1100;
+      const height = 560;
+      const cx = width / 2;
+      const cy = height / 2;
+      const radius = Math.min(width, height) * 0.38;
+
+      const serviceSet = new Set();
+      for (const n of nodes) {
+        if (n && n.service_id) serviceSet.add(n.service_id);
+      }
+      for (const e of edges) {
+        if (e && e.from_service_id) serviceSet.add(e.from_service_id);
+        if (e && e.to_service_id) serviceSet.add(e.to_service_id);
+      }
+
+      const services = Array.from(serviceSet).sort((a, b) => a.localeCompare(b));
+      const positions = new Map();
+      const edgeElements = [];
+
+      services.forEach((service, idx) => {
+        const angle = (2 * Math.PI * idx) / Math.max(services.length, 1);
+        positions.set(service, {
+          x: cx + radius * Math.cos(angle),
+          y: cy + radius * Math.sin(angle),
+        });
+      });
+
+      const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+      const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+      marker.setAttribute('id', 'arrowhead');
+      marker.setAttribute('markerWidth', '8');
+      marker.setAttribute('markerHeight', '6');
+      marker.setAttribute('refX', '7');
+      marker.setAttribute('refY', '3');
+      marker.setAttribute('orient', 'auto');
+      const arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      arrowPath.setAttribute('d', 'M0,0 L8,3 L0,6 Z');
+      arrowPath.setAttribute('fill', '#94a3b8');
+      marker.appendChild(arrowPath);
+      defs.appendChild(marker);
+      graphSvg.appendChild(defs);
+
+      const edgesLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      const nodesLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      graphSvg.appendChild(edgesLayer);
+      graphSvg.appendChild(nodesLayer);
+
+      for (const e of edges) {
+        const from = positions.get(e.from_service_id);
+        const to = positions.get(e.to_service_id);
+        if (!from || !to) continue;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', from.x);
+        line.setAttribute('y1', from.y);
+        line.setAttribute('x2', to.x);
+        line.setAttribute('y2', to.y);
+        line.setAttribute('class', 'edge');
+        line.setAttribute('marker-end', 'url(#arrowhead)');
+        line.setAttribute('title', `${e.from_service_id} (${e.from_api}) -> ${e.to_service_id} (${e.to_api})`);
+        edgesLayer.appendChild(line);
+        edgeElements.push({ line, edge: e });
+      }
+
+      function updateEdges() {
+        for (const item of edgeElements) {
+          const from = positions.get(item.edge.from_service_id);
+          const to = positions.get(item.edge.to_service_id);
+          if (!from || !to) continue;
+          item.line.setAttribute('x1', from.x);
+          item.line.setAttribute('y1', from.y);
+          item.line.setAttribute('x2', to.x);
+          item.line.setAttribute('y2', to.y);
+        }
+      }
+
+      function getMousePoint(evt) {
+        const rect = graphSvg.getBoundingClientRect();
+        const scaleX = width / rect.width;
+        const scaleY = height / rect.height;
+        return {
+          x: (evt.clientX - rect.left) * scaleX,
+          y: (evt.clientY - rect.top) * scaleY,
+        };
+      }
+
+      let activeService = null;
+
+      function onMouseMove(evt) {
+        if (!activeService) return;
+        const p = getMousePoint(evt);
+        const clampedX = Math.max(20, Math.min(width - 20, p.x));
+        const clampedY = Math.max(20, Math.min(height - 20, p.y));
+        positions.set(activeService, { x: clampedX, y: clampedY });
+
+        const nodeGroup = nodesLayer.querySelector(`[data-service="${activeService}"]`);
+        if (nodeGroup) {
+          const circle = nodeGroup.querySelector('circle');
+          const label = nodeGroup.querySelector('.node-label');
+          const sliLabel = nodeGroup.querySelector('.node-sli');
+          const sloLabel = nodeGroup.querySelector('.node-slo');
+          circle.setAttribute('cx', clampedX);
+          circle.setAttribute('cy', clampedY);
+          label.setAttribute('x', clampedX + 16);
+          label.setAttribute('y', clampedY + 4);
+          if (sliLabel) {
+            sliLabel.setAttribute('x', clampedX + 16);
+            sliLabel.setAttribute('y', clampedY + 18);
+          }
+          if (sloLabel) {
+            sloLabel.setAttribute('x', clampedX + 16);
+            sloLabel.setAttribute('y', clampedY + 30);
+          }
+        }
+
+        updateEdges();
+      }
+
+      function onMouseUp() {
+        if (!activeService) return;
+        const nodeGroup = nodesLayer.querySelector(`[data-service="${activeService}"]`);
+        if (nodeGroup) nodeGroup.classList.remove('dragging');
+        activeService = null;
+      }
+
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
+
+      for (const service of services) {
+        const p = positions.get(service);
+
+        const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        group.setAttribute('class', 'node-group');
+        group.setAttribute('data-service', service);
+
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', p.x);
+        circle.setAttribute('cy', p.y);
+        circle.setAttribute('r', '13');
+        circle.setAttribute('class', 'node');
+        group.appendChild(circle);
+
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', p.x + 16);
+        label.setAttribute('y', p.y + 4);
+        label.setAttribute('class', 'node-label');
+        label.textContent = service;
+        group.appendChild(label);
+
+        const sliInfo = (serviceSliMap && serviceSliMap.get(service)) || { short: 'No SLI', full: 'No SLI returned' };
+        const sliLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        sliLabel.setAttribute('x', p.x + 16);
+        sliLabel.setAttribute('y', p.y + 18);
+        sliLabel.setAttribute('class', 'node-sli');
+        sliLabel.textContent = `SLI ${sliInfo.short}`;
+        group.appendChild(sliLabel);
+
+        const sloInfo = (serviceSloMap && serviceSloMap.get(service)) || { short: 'No SLO', full: 'No SLO returned' };
+        const sloLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        sloLabel.setAttribute('x', p.x + 16);
+        sloLabel.setAttribute('y', p.y + 30);
+        sloLabel.setAttribute('class', 'node-slo');
+        sloLabel.textContent = `SLO ${sloInfo.short}`;
+        group.appendChild(sloLabel);
+
+        const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+        title.textContent = `${service}\nSLI:\n${sliInfo.full}\n\nSLO:\n${sloInfo.full}`;
+        group.appendChild(title);
+
+        group.addEventListener('mousedown', (evt) => {
+          evt.preventDefault();
+          activeService = service;
+          group.classList.add('dragging');
+        });
+
+        nodesLayer.appendChild(group);
+      }
+
+      updateEdges();
+    }
+
+    function renderRecommendation(result) {
+      recommendResult.innerHTML = '';
+
+      const recommendations = Array.isArray(result?.Recommendations) ? result.Recommendations : [];
+      const recommendationsTitle = document.createElement('h4');
+      recommendationsTitle.textContent = 'Recommendations';
+      recommendResult.appendChild(recommendationsTitle);
+
+      if (recommendations.length > 0) {
+        const table = document.createElement('table');
+        table.className = 'table';
+
+        const headerRow = document.createElement('tr');
+        ['Type', 'Recommended SLO Target', 'Unit', 'Window'].forEach((name) => {
+          const th = document.createElement('th');
+          th.textContent = name;
+          headerRow.appendChild(th);
+        });
+
+        const thead = document.createElement('thead');
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        for (const rec of recommendations) {
+          const row = document.createElement('tr');
+
+          const c1 = document.createElement('td');
+          c1.textContent = rec.Type ?? '-';
+          row.appendChild(c1);
+
+          const c2 = document.createElement('td');
+          c2.textContent = rec.Target ?? '-';
+          row.appendChild(c2);
+
+          const c3 = document.createElement('td');
+          c3.textContent = rec.Unit ?? '-';
+          row.appendChild(c3);
+
+          const c4 = document.createElement('td');
+          c4.textContent = rec.Window ?? '-';
+          row.appendChild(c4);
+
+          tbody.appendChild(row);
+        }
+
+        table.appendChild(tbody);
+        recommendResult.appendChild(table);
+      } else {
+        const empty = document.createElement('div');
+        empty.className = 'meta';
+        empty.textContent = 'No recommendation rows returned.';
+        recommendResult.appendChild(empty);
+      }
+
+      const comparisons = Array.isArray(result?.SLIComparison) ? result.SLIComparison : [];
+      const compareTitle = document.createElement('h4');
+      compareTitle.style.marginTop = '10px';
+      compareTitle.textContent = 'SLO Comparison';
+      recommendResult.appendChild(compareTitle);
+
+      if (comparisons.length > 0) {
+        const compareTable = document.createElement('table');
+        compareTable.className = 'table';
+
+        const headerRow = document.createElement('tr');
+        ['Type', 'SLI Value', 'Recommended SLO', 'Unit', 'Meets', 'Delta'].forEach((name) => {
+          const th = document.createElement('th');
+          th.textContent = name;
+          headerRow.appendChild(th);
+        });
+        const thead = document.createElement('thead');
+        thead.appendChild(headerRow);
+        compareTable.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        for (const cmp of comparisons) {
+          const row = document.createElement('tr');
+
+          const c1 = document.createElement('td');
+          c1.textContent = cmp.Type ?? '-';
+          row.appendChild(c1);
+
+          const c2 = document.createElement('td');
+          c2.textContent = cmp.SLIValue ?? '-';
+          row.appendChild(c2);
+
+          const c3 = document.createElement('td');
+          c3.textContent = cmp.RecommendedSLO ?? '-';
+          row.appendChild(c3);
+
+          const c4 = document.createElement('td');
+          c4.textContent = cmp.Unit ?? '-';
+          row.appendChild(c4);
+
+          const c5 = document.createElement('td');
+          c5.textContent = cmp.MeetsRecommendation ?? '-';
+          row.appendChild(c5);
+
+          const c6 = document.createElement('td');
+          c6.textContent = cmp.Delta ?? '-';
+          row.appendChild(c6);
+
+          tbody.appendChild(row);
+        }
+        compareTable.appendChild(tbody);
+        recommendResult.appendChild(compareTable);
+      } else {
+        const empty = document.createElement('div');
+        empty.className = 'meta';
+        empty.textContent = 'No SLO comparison rows returned.';
+        recommendResult.appendChild(empty);
+      }
+
+      const llm = result?.LLMExplanation;
+      if (llm && (llm.Summary || llm.Explanation || llm.Bottleneck)) {
+        const llmCard = document.createElement('div');
+        llmCard.className = 'card';
+        llmCard.style.marginTop = '10px';
+
+        const title = document.createElement('h4');
+        title.textContent = 'LLM Explanation';
+        llmCard.appendChild(title);
+
+        if (llm.Summary) {
+          const p = document.createElement('p');
+          p.textContent = `Summary: ${llm.Summary}`;
+          llmCard.appendChild(p);
+        }
+        if (llm.Explanation) {
+          const p = document.createElement('p');
+          p.textContent = `Explanation: ${llm.Explanation}`;
+          llmCard.appendChild(p);
+        }
+        if (llm.Bottleneck) {
+          const p = document.createElement('p');
+          p.textContent = `Bottleneck: ${llm.Bottleneck}`;
+          llmCard.appendChild(p);
+        }
+
+        recommendResult.appendChild(llmCard);
+      }
+    }
+
+    async function loadRecommendation() {
+      const base = recommendApiBaseInput.value.trim().replace(/\/$/, '');
+      const serviceId = recommendServiceIdInput.value.trim();
+      const api = recommendApiInput.value.trim();
+
+      recommendError.textContent = '';
+      acceptError.textContent = '';
+      acceptStatus.textContent = '';
+      recommendResult.innerHTML = '';
+      latestRecommendationData = null;
+      acceptRecommendBtn.disabled = true;
+
+      if (!base || !serviceId || !api) {
+        recommendError.textContent = 'Please provide API base, service ID, and API.';
+        return;
+      }
+
+      recommendStatus.textContent = 'Loading recommendation...';
+
+      try {
+        const url = `${base}/slos/recommend?service_id=${encodeURIComponent(serviceId)}&api=${encodeURIComponent(api)}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          let message = `HTTP ${response.status}`;
+          try {
+            const data = await response.json();
+            if (data?.detail) message = data.detail;
+          } catch {
+          }
+          throw new Error(message);
+        }
+
+        const data = await response.json();
+        renderRecommendation(data);
+        latestRecommendationData = data;
+        acceptRecommendBtn.disabled = !Array.isArray(data?.Recommendations) || data.Recommendations.length === 0;
+        recommendStatus.textContent = 'Recommendation loaded.';
+      } catch (err) {
+        recommendStatus.textContent = 'Failed to load recommendation.';
+        recommendError.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    async function acceptRecommendedSlo() {
+      acceptError.textContent = '';
+      acceptStatus.textContent = '';
+
+      const base = recommendApiBaseInput.value.trim().replace(/\/$/, '');
+      if (!base) {
+        acceptError.textContent = 'Please provide SLO_Recommend API Base.';
+        return;
+      }
+
+      const recommendations = Array.isArray(latestRecommendationData?.Recommendations)
+        ? latestRecommendationData.Recommendations
+        : [];
+      if (recommendations.length === 0) {
+        acceptError.textContent = 'Load recommendation first, then accept it.';
+        return;
+      }
+
+      const payload = {
+        ServiceId: latestRecommendationData.ServiceId || recommendServiceIdInput.value.trim(),
+        API: latestRecommendationData.API || recommendApiInput.value.trim(),
+        SLOs: recommendations.map((rec) => ({
+          Type: rec.Type,
+          Target: Number(rec.Target),
+          Unit: rec.Unit,
+          Window: rec.Window || '28',
+        })),
+      };
+
+      acceptStatus.textContent = 'Saving recommended SLO...';
+      acceptRecommendBtn.disabled = true;
+
+      try {
+        const response = await fetch(`${base}/slos/recommended`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          let message = `HTTP ${response.status}`;
+          try {
+            const data = await response.json();
+            if (data?.detail) message = data.detail;
+          } catch {
+          }
+          throw new Error(message);
+        }
+
+        await response.json();
+        acceptStatus.textContent = 'Accepted Recommendation Saved';
+      } catch (err) {
+        acceptStatus.textContent = 'Save failed.';
+        acceptError.textContent = `Error: ${err.message}`;
+      } finally {
+        acceptRecommendBtn.disabled = false;
+      }
+    }
+
+    async function loadGraph() {
+      const base = apiBaseInput.value.trim().replace(/\/$/, '');
+      const sliBase = sliApiBaseInput.value.trim().replace(/\/$/, '');
+      const sloBase = sloApiBaseInput.value.trim().replace(/\/$/, '');
+      if (!base) return;
+
+      error.textContent = '';
+      status.textContent = 'Loading graph, SLIs, and SLOs...';
+      clearGraph();
+
+      try {
+        const response = await fetch(`${base}/graph/all`);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const graph = await response.json();
+        const nodes = Array.isArray(graph.nodes) ? graph.nodes : [];
+        const edges = Array.isArray(graph.edges) ? graph.edges : [];
+
+        const serviceSet = new Set();
+        for (const n of nodes) {
+          if (n && n.service_id) serviceSet.add(n.service_id);
+        }
+        for (const e of edges) {
+          if (e && e.from_service_id) serviceSet.add(e.from_service_id);
+          if (e && e.to_service_id) serviceSet.add(e.to_service_id);
+        }
+        const services = Array.from(serviceSet).sort((a, b) => a.localeCompare(b));
+        const serviceSliMap = await fetchServiceSliMap(services, sliBase);
+        const serviceSloMap = await fetchServiceSloMap(services, sloBase);
+
+        renderGraph(nodes, edges, serviceSliMap, serviceSloMap);
+
+        status.textContent = 'Graph loaded successfully.';
+      } catch (err) {
+        status.textContent = 'Failed to load graph.';
+        error.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    function buildImpactPayload() {
+      return {
+        ServiceId: impactServiceIdInput.value.trim(),
+        API: impactApiInput.value.trim(),
+        NewSLO: [
+          { Type: 'Availability', Target: Number(newAvailabilityInput.value), Unit: 'percent' },
+          { Type: 'Latency', Target: Number(newLatencyInput.value), Unit: 'p95' },
+          { Type: 'ErrorRate', Target: Number(newErrorRateInput.value), Unit: 'percent' },
+        ],
+      };
+    }
+
+    function createTable(headers, rows) {
+      const table = document.createElement('table');
+      table.className = 'table';
+
+      const thead = document.createElement('thead');
+      const tr = document.createElement('tr');
+      headers.forEach((h) => {
+        const th = document.createElement('th');
+        th.textContent = h;
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      rows.forEach((cols) => {
+        const row = document.createElement('tr');
+        cols.forEach((c) => {
+          const td = document.createElement('td');
+          td.textContent = c;
+          row.appendChild(td);
+        });
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+
+      return table;
+    }
+
+    function renderImpact(data) {
+      impactResult.innerHTML = '';
+
+      const chainCard = document.createElement('div');
+      chainCard.className = 'card';
+      chainCard.style.marginBottom = '12px';
+      const chainTitle = document.createElement('h3');
+      chainTitle.textContent = 'Upstream Chain';
+      chainCard.appendChild(chainTitle);
+
+      const chain = Array.isArray(data?.UpstreamChain) ? data.UpstreamChain : [];
+      if (chain.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'meta';
+        empty.textContent = 'No upstream nodes impacted.';
+        chainCard.appendChild(empty);
+      } else {
+        chainCard.appendChild(createTable(['#', 'Node'], chain.map((item, idx) => [String(idx + 1), String(item)])));
+      }
+      impactResult.appendChild(chainCard);
+
+      const affectedCard = document.createElement('div');
+      affectedCard.className = 'card';
+      affectedCard.style.marginBottom = '12px';
+      const affectedTitle = document.createElement('h3');
+      affectedTitle.textContent = 'Affected Nodes';
+      affectedCard.appendChild(affectedTitle);
+
+      const affected = Array.isArray(data?.AffectedNodes) ? data.AffectedNodes : [];
+      if (affected.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'meta';
+        empty.textContent = 'No affected node details returned.';
+        affectedCard.appendChild(empty);
+      } else {
+        const rows = affected.map((node) => {
+          const curr = node.CurrentSLO || {};
+          const upd = node.UpdatedSLO || {};
+          const sli = node.CurrentSLI || {};
+          return [
+            `${node.ServiceId}/${node.API}`,
+            `${curr.Availability ?? '-'} | ${curr.Latency ?? '-'} | ${curr.ErrorRate ?? '-'}`,
+            `${upd.Availability ?? '-'} | ${upd.Latency ?? '-'} | ${upd.ErrorRate ?? '-'}`,
+            `${sli.Availability ?? '-'} | ${sli.Latency ?? '-'} | ${sli.ErrorRate ?? '-'}`,
+            String(node.IncidentCount ?? 0),
+          ];
+        });
+
+        affectedCard.appendChild(
+          createTable(
+            ['Node', 'Current SLO (A|L|E)', 'Updated SLO (A|L|E)', 'Current SLI (A|L|E)', 'Incidents'],
+            rows,
+          ),
+        );
+      }
+      impactResult.appendChild(affectedCard);
+
+      const llmCard = document.createElement('div');
+      llmCard.className = 'card';
+      const llmTitle = document.createElement('h3');
+      llmTitle.textContent = 'LLM Analysis';
+      llmCard.appendChild(llmTitle);
+
+      const llm = data?.LLMImpact || {};
+      const summary = document.createElement('div');
+      summary.className = 'meta';
+      summary.textContent = `Summary: ${llm.Summary || '-'}`;
+      llmCard.appendChild(summary);
+
+      const explanation = document.createElement('div');
+      explanation.className = 'meta';
+      explanation.textContent = `Explanation: ${llm.Explanation || '-'}`;
+      llmCard.appendChild(explanation);
+
+      const bottleneck = document.createElement('div');
+      bottleneck.className = 'meta';
+      bottleneck.textContent = `Bottleneck: ${llm.Bottleneck || '-'}`;
+      llmCard.appendChild(bottleneck);
+
+      const risks = Array.isArray(llm.Risks) ? llm.Risks : [];
+      if (risks.length > 0) {
+        llmCard.appendChild(createTable(['#', 'Risk'], risks.map((risk, idx) => [String(idx + 1), String(risk)])));
+      } else {
+        const none = document.createElement('div');
+        none.className = 'meta';
+        none.textContent = 'No risks returned.';
+        llmCard.appendChild(none);
+      }
+
+      impactResult.appendChild(llmCard);
+    }
+
+    async function analyzeImpact() {
+      impactError.textContent = '';
+      impactResult.innerHTML = '';
+
+      const base = impactApiBaseInput.value.trim().replace(/\/$/, '');
+      const payload = buildImpactPayload();
+
+      if (!base || !payload.ServiceId || !payload.API) {
+        impactError.textContent = 'Please provide API base, service ID, and API.';
+        return;
+      }
+
+      impactStatus.textContent = 'Running impact analysis...';
+
+      try {
+        const response = await fetch(`${base}/slos/impact-analysis`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          let message = `HTTP ${response.status}`;
+          try {
+            const data = await response.json();
+            if (data?.detail) message = data.detail;
+          } catch {
+          }
+          throw new Error(message);
+        }
+
+        const data = await response.json();
+        renderImpact(data);
+        impactStatus.textContent = 'Impact analysis completed.';
+      } catch (err) {
+        impactStatus.textContent = 'Impact analysis failed.';
+        impactError.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    loadBtn.addEventListener('click', loadGraph);
+    recommendBtn.addEventListener('click', loadRecommendation);
+    acceptRecommendBtn.addEventListener('click', acceptRecommendedSlo);
+    analyzeBtn.addEventListener('click', analyzeImpact);
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "ServiceId": "PricingService",
+  "API": [
+    "cart/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Checkout",
+  "Contact": "checkout@shop.local",
+  "Id": "a90d7473-282e-4474-a3de-0e5cdedcf3c7"
+}

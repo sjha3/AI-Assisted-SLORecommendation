@@ -1,0 +1,19 @@
+{
+  "ServiceId": "ShippingService",
+  "API": "shipping/v1",
+  "DependsOn": [
+    {
+      "ServiceId": "OrderService",
+      "API": "orders/v1"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/read"
+    },
+    {
+      "ServiceId": "DocumentDBService",
+      "API": "documentdb/v1/write"
+    }
+  ],
+  "Id": "40b4928c-b9f6-40e2-abcb-a88f2748f357"
+}

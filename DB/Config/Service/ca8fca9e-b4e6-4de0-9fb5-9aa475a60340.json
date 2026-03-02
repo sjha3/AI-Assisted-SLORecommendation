@@ -1,0 +1,11 @@
+{
+  "ServiceId": "NotificationService",
+  "API": [
+    "notification/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "Notifications",
+  "Contact": "notify@shop.local",
+  "Id": "ca8fca9e-b4e6-4de0-9fb5-9aa475a60340"
+}

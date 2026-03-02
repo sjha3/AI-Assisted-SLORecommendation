@@ -1,0 +1,11 @@
+{
+  "ServiceId": "CustomerProfileService",
+  "API": [
+    "customer-profile/v1"
+  ],
+  "Type": "WebApp",
+  "Category": "Internal",
+  "Team": "CRM",
+  "Contact": "crm@shop.local",
+  "Id": "c47fb55f-fadb-4876-972b-7eb9e506085e"
+}

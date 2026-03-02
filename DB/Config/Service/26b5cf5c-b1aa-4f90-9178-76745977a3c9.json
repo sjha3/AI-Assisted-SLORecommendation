@@ -1,0 +1,12 @@
+{
+  "ServiceId": "DocumentDBService",
+  "API": [
+    "documentdb/v1/read",
+    "documentdb/v1/write"
+  ],
+  "Type": "DocumentDB",
+  "Category": "External",
+  "Team": "Data",
+  "Contact": "data@shop.local",
+  "Id": "26b5cf5c-b1aa-4f90-9178-76745977a3c9"
+}
