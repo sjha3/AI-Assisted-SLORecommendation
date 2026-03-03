@@ -1,4 +1,4 @@
-# Service API (FastAPI)
+# AI Assisted SLO Recommendation Service
 
 ## Setup
 
