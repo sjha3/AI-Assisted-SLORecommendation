@@ -1,5 +1,30 @@
 # AI Assisted SLO Recommendation Service
 
+## Demo
+
+### Recorded demo
+[AI-SLO-Recommendation.mp4](./AI-SLO-Recommendation.mp4)
+
+### Demo with APIs integrated with UX
+
+- [Dependency Graph tab](./LoadGraph.png)
+	- Shows each node as a service with its SLI/SLO and dependencies.
+- [SLO Recommendation and SLO Acceptance tabs](./GetSLORecommendation.png)
+	- Shows recommendation workflow and acceptance of selected SLO targets.
+- [Impact Analysis tab](./ImpactAnalysis.png)
+	- Shows downstream impact of changing SLO values for a service/API.
+   
+### Demo with Agentic Assistant integrated with UX
+Showing some usecases of interacting with Agentic assistant
+- [Natural language way of getting SLIs of a service.](./Agentic_SLI.png)
+- [Natural language way of getting recommended SLO.](./Agentic_SLORecommendation.png)
+- [Natural language way of getting impact analysis.](./Agentic_impactAnalysis.png)
+
+#### Sample user queries 
+- `Agentic_SLI.png:Provide SLI of PricingService inventory/v1`
+- `Agentic_SLORecommendation.png: recommend SLO for PricingService inventory/v1`
+- `Agentic_impactAnalysis.png: perform impact analysis of PricingService inventory/v1 with latency changes to 500ms`
+
 ## Setup
 
 ```powershell
@@ -20,7 +45,7 @@ api_key=<your-azure-openai-api-key>
 azure_model_name=<your-model-name>
 ```
 
-These variables are used by `app/SLO_Recommend` to call Azure OpenAI and generate the `LLMExplanation` in `/slos/recommend`.
+These variables are used by APIs in `app/SLO_Recommend` for interaction with LLM.
 
 ## Run
 
@@ -65,13 +90,6 @@ uvicorn main:app --reload --port 8009
 
 The project includes a multi-agent orchestration layer for natural language reliability queries.
 
-### Demo with Sample commands (check shapshots)
-- `Agentic_SLI.png:Provide SLI of PricingService inventory/v1`
-- `Agentic_SLORecommendation.png: recommend SLO for PricingService inventory/v1`
-- `Agentic_impactAnalysis.png: perform impact analysis of PricingService inventory/v1 with latency changes to 500ms`
-
-### Demo snapshota
-
 ### Agent roles
 
 - `PlanningAgent`
@@ -105,23 +123,8 @@ uvicorn main:app --reload --port 8009
 		- `task`
 		- `result`
 
-### Sample commands (`/task/run`)
 
-```powershell
-# PowerShell
-$body = @{ task = "get SLI of PricingService inventory/v1" } | ConvertTo-Json
-Invoke-RestMethod -Method POST -Uri "http://127.0.0.1:8009/task/run" -ContentType "application/json" -Body $body |
-	ConvertTo-Json -Depth 8
-```
-
-```bash
-# curl
-curl -X POST "http://127.0.0.1:8009/task/run" \
-  -H "Content-Type: application/json" \
-  -d '{"task":"get SLI of PricingService inventory/v1"}'
-```
-
-### Example tasks
+### Sample queries
 
 - `get SLI of PricingService inventory/v1`
 - `get SLO recommendation for CatalogService catalog/v1`
@@ -129,7 +132,8 @@ curl -X POST "http://127.0.0.1:8009/task/run" \
 
 ## Data storage
 
-The project uses file-based storage under `DB/`.
+- `The project uses file-based storage under `DB/` and data has been stored in form of json file.`
+- `I have created a dependency graph with some e-commerce services, assumed their SLIs, documented SLOs, and incident history, and placed them under specific sections in `DB/`.`
 
 ### `DB/` structure
 
