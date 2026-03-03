@@ -64,10 +64,12 @@ uvicorn main:app --reload --port 8009
 
 The project includes a multi-agent orchestration layer for natural language reliability queries.
 
-### Sample commands
-- `Provide SLI of PricingService inventory/v1`
-- `recommend SLO for PricingService inventory/v1`
-- `perform impact analysis of PricingService inventory/v1 with latency changes to 500ms`
+### Demo with Sample commands (check shapshots)
+- `Agentic_SLI.png:Provide SLI of PricingService inventory/v1`
+- `Agentic_SLORecommendation.png: recommend SLO for PricingService inventory/v1`
+- `Agentic_impactAnalysis.png: perform impact analysis of PricingService inventory/v1 with latency changes to 500ms`
+
+### Demo snapshota
 
 ### Agent roles
 
