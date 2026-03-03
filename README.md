@@ -24,23 +24,50 @@ These variables are used by `app/SLO_Recommend` to call Azure OpenAI and generat
 
 ## Run
 
+Start each service in a separate terminal.
+
 ```powershell
+# 1) Onboarding API
 cd .\app\Onb_API
 uvicorn main:app --reload --port 8001
 
+# 2) SLI API
 cd ..\SLI
 uvicorn main:app --reload --port 8002
 
+# 3) Dependency graph API
 cd ..\DepsManager
 uvicorn main:app --reload --port 8003
 
+# 4) Known SLO API
+cd ..\Knowledge_SLO
+uvicorn main:app --reload --port 8004
+
+# 5) Incidents API
+cd ..\Incidents
+uvicorn main:app --reload --port 8005
+
+# 6) Dependency onboarding API
+cd ..\Onb_Deps
+uvicorn main:app --reload --port 8006
+
+# 7) SLO recommendation API
 cd ..\SLO_Recommend
-uvicorn main:app --reload --port 8007
+uvicorn main:app --reload --port 8008
+
+# 8) Agents API
+cd ..\..\agents
+uvicorn main:app --reload --port 8009
 ```
 
 ## Multi-agent system (`agents/`)
 
 The project includes a multi-agent orchestration layer for natural language reliability queries.
+
+### Sample commands
+- `Provide SLI of PricingService inventory/v1`
+- `recommend SLO for PricingService inventory/v1`
+- `perform impact analysis of PricingService inventory/v1 with latency changes to 500ms`
 
 ### Agent roles
 
