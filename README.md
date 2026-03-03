@@ -24,7 +24,8 @@ These variables are used by `app/SLO_Recommend` to call Azure OpenAI and generat
 
 ## Run
 
-Start each service in a separate terminal.
+Start each service in a separate terminal and Load UX from ux/index.html
+I have attached snapshots of UX (*.png files) in this repo
 
 ```powershell
 # 1) Onboarding API
