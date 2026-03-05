@@ -84,6 +84,7 @@ uvicorn main:app --reload --port 8008
 # 8) Agents API
 cd ..\..\agents
 uvicorn main:app --reload --port 8009
+$env:AGENT_LOG_LEVEL="DEBUG" (Enable detailed logging to see agent activity)
 ```
 
 ## Multi-agent system (`agents/`)
@@ -122,7 +123,6 @@ uvicorn main:app --reload --port 8009
 	- Response body:
 		- `task`
 		- `result`
-
 
 ### Sample queries
 
