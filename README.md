@@ -127,6 +127,9 @@ uvicorn main:app --reload --port 8009
 ### Sample queries
 
 - `get SLI of PricingService inventory/v1`
+- `get recommended SLO of this service`
+- `Evaluate whether this SLOs is too tight or too loose`
+- `Summarize how this service has been performing against this SLO`
 - `get SLO recommendation for CatalogService catalog/v1`
 - `run impact analysis for CheckoutService checkout/v1 with tighter latency`
 

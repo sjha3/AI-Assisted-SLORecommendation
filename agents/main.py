@@ -5,15 +5,27 @@ from typing import Sequence
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from Orchestration import team_agents
 from model.task_model import TaskRequest, TaskResponse
 
-if not logging.getLogger().handlers:
+def _configure_agent_logging() -> None:
     configured_level = os.getenv("AGENT_LOG_LEVEL", "INFO").upper()
-    logging.basicConfig(
-        level=getattr(logging, configured_level, logging.INFO),
-        format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-    )
+    level = getattr(logging, configured_level, logging.INFO)
+
+    agents_logger = logging.getLogger("agents")
+    if not agents_logger.handlers:
+        handler = logging.StreamHandler()
+        handler.setFormatter(
+            logging.Formatter("%(asctime)s | %(levelname)s | %(name)s | %(message)s")
+        )
+        agents_logger.addHandler(handler)
+
+    agents_logger.setLevel(level)
+    agents_logger.propagate = False
+
+
+_configure_agent_logging()
+
+from Orchestration import team_agents
 
 logger = logging.getLogger("agents.main")
 app = FastAPI(title="SLO Agents API")
@@ -33,14 +45,21 @@ async def run_single_query(task: str) -> str:
     final_result = ""
     async with team_run_lock:
         async for item in team_agents.run_stream(task=task):
+            source = getattr(item, "source", type(item).__name__)
             content = getattr(item, "content", None)
             if isinstance(content, str) and content.strip():
+                compact_content = " ".join(content.split())[:240]
+                logger.info("agent.event source=%s content=%s", source, compact_content)
                 final_result = content
+            else:
+                logger.debug("agent.event source=%s type=%s", source, type(item).__name__)
 
     if not final_result:
         return "No result returned."
 
-    return final_result.replace("TERMINATE", "").strip()
+    cleaned_result = final_result.replace("TERMINATE", "").strip()
+    logger.info("conversation.end")
+    return cleaned_result
 
 
 @app.post("/task/run", response_model=TaskResponse)
