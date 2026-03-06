@@ -1,5 +1,9 @@
 # AI Assisted SLO Recommendation Service
 
+## Design Document
+
+- [DesignDocument.docx](./DesignDocument.docx)
+
 ## Demo
 
 ### Recorded demo
