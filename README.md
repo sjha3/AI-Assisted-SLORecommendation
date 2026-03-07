@@ -7,15 +7,16 @@
 ## Demo
 
 ### Recorded demo
-[AI-SLO-Recommendation.mp4](./AI-SLO-Recommendation.mp4)
+- [AI_Assistant_Demo](./Demo/AI_Assistant.mp4)
+- [API_UX_Integration_Demo](./Demo/API_UX_Demo.mp4)
 
-### Demo with APIs integrated with UX
+### Snapshots with APIs integrated with UX
 
-- [Dependency Graph tab](./LoadGraph.png)
+- [Dependency Graph tab](./Demo/Snapshots/LoadGraph.png)
 	- Shows each node as a service with its SLI/SLO and dependencies.
-- [SLO Recommendation and SLO Acceptance tabs](./GetSLORecommendation.png)
+- [SLO Recommendation and SLO Acceptance tabs](./Demo/Snapshots/GetSLORecommendation.png)
 	- Shows recommendation workflow and acceptance of selected SLO targets.
-- [Impact Analysis tab](./ImpactAnalysis.png)
+- [Impact Analysis tab](./Demo/Snapshots/ImpactAnalysis.png)
 	- Shows downstream impact of changing SLO values for a service/API.
    
 ### Demo with Agentic Assistant integrated with UX
@@ -134,8 +135,10 @@ uvicorn main:app --reload --port 8009
 - `get recommended SLO of this service`
 - `Evaluate whether this SLOs is too tight or too loose`
 - `Summarize how this service has been performing against this SLO`
-- `get SLO recommendation for CatalogService catalog/v1`
+- `Check whether CatalogService catalog/v1 has been breaching its SLO`
+- `Has there been any incident reported for availability for this service`
 - `run impact analysis for CheckoutService checkout/v1 with tighter latency`
+- `get SLO recommendation for CatalogService catalog/v1`
 
 ## Data storage
 
