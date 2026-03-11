@@ -21,9 +21,9 @@
    
 ### Demo with Agentic Assistant integrated with UX
 Showing some usecases of interacting with Agentic assistant
-- [Natural language way of getting SLIs of a service.](./Agentic_SLI.png)
-- [Natural language way of getting recommended SLO.](./Agentic_SLORecommendation.png)
-- [Natural language way of getting impact analysis.](./Agentic_impactAnalysis.png)
+- [Natural language way of getting SLIs of a service.](./Demo/Snapshots/Agentic_SLI.png)
+- [Natural language way of getting recommended SLO.](./Demo/Snapshots/Agentic_SLORecommendation.png)
+- [Natural language way of getting impact analysis.](./Demo/Snapshots/Agentic_impactAnalysis.png)
 
 #### Sample user queries 
 - `Agentic_SLI.png:Provide SLI of PricingService inventory/v1`
