@@ -20,15 +20,24 @@
 	- Shows downstream impact of changing SLO values for a service/API.
    
 ### Demo with Agentic Assistant integrated with UX
-Showing some usecases of interacting with Agentic assistant
-- [Natural language way of getting SLIs of a service.](./Demo/Snapshots/Agentic_SLI.png)
-- [Natural language way of getting recommended SLO.](./Demo/Snapshots/Agentic_SLORecommendation.png)
-- [Natural language way of getting impact analysis.](./Demo/Snapshots/Agentic_impactAnalysis.png)
+
+Snapshots showing some usecases of interacting with Agentic assistant
+- [Natural language way of getting SLIs of PricingService inventory/v1.](./Demo/Snapshots/Agentic_SLI.png)
+- [Natural language way of getting recommended SLO of PricingService inventory/v1.](./Demo/Snapshots/Agentic_SLORecommendation.png)
+- [Natural language way of getting impact analysis of PricingService inventory/v1 with SLO changes](./Demo/Snapshots/Agentic_impactAnalysis.png)
+
+#### Note
+A lot more usecases are covered in [AI_Assistant_Demo](./Demo/AI_Assistant.mp4)
 
 #### Sample user queries 
-- `Agentic_SLI.png:Provide SLI of PricingService inventory/v1`
-- `Agentic_SLORecommendation.png: recommend SLO for PricingService inventory/v1`
-- `Agentic_impactAnalysis.png: perform impact analysis of PricingService inventory/v1 with latency changes to 500ms`
+- `get SLI of PricingService inventory/v1`
+- `get recommended SLO of this service`
+- `Evaluate whether this SLOs is too tight or too loose`
+- `Summarize how this service has been performing against this SLO`
+- `Check whether CatalogService catalog/v1 has been breaching its SLO`
+- `Has there been any incident reported for availability for this service`
+- `run impact analysis for CheckoutService checkout/v1 with tighter latency`
+- `get SLO recommendation for CatalogService catalog/v1`
 
 ## Setup
 
